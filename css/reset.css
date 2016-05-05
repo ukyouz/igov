@@ -1,0 +1,33 @@
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, form, blockquote, img, abbr, article, aside, details, footer, header, hgroup, nav, section, address, caption, cite, code, em, th {
+	font-size: 1em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+}
+fieldset, iframe {
+	border: none;
+}
+caption, th, p {
+	text-align: left;
+}
+article, aside, footer, header, hgroup, nav, section, figure, img {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none;
+}
+a {
+	border: none;
+	text-decoration: none;
+}
