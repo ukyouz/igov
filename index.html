@@ -2,24 +2,104 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>Igov</title>
+	<title>igov 安心政府</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<style>
+		body {
+			font-size: 16px;
+			font-family: arial, sans-serif;
+		}
+		section {
+			background: #fff;
+			position: relative;
+		}
 		#header {
 			text-align: center;
+			border-top: 16px solid #33CC99;
+			border-bottom: 1px solid #ddd;
 		}
-		#header .container > div {
+		#header .container {
+			padding-top: 6em;
+		}
+		#header .row {
+			margin-bottom: 1em;
+		}
+		#header .row > div {
 			display: inline-block;
+		}
+		#header .search-bar {
+			width: 30em;
+		}
+		#service .container {
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
+		#service .list {
+			max-width: 38em;
+			text-align: center;
+			margin: auto;
+		}
+		#service .list-item {
+			display: inline-block;
+			width: 6em;
+			height: 6em;
+			margin: .5em;
+			padding: 1em;
+			border: 1px solid #ddd;
+			border-radius: 24px;
+		}
+		#service .list-item.transport {color: #33CC99; border-color: #33CC99;}
+		#service .list-item.tax {color: #4BB735; border-color: #4BB735;}
+		#service .list-item.payment {color: #29C5EF; border-color: #29C5EF;}
+		#service .list-item.medical {color: #F27968; border-color: #F27968;}
+		#service .list-item.law {color: #6852C6; border-color: #6852C6;}
+		#service .list-item.local {color: #FCA61D; border-color: #FCA61D;}
+		#service .list-item.historic {color: #BA8642; border-color: #BA8642;}
+		#service .list-item.tourism {color: #33CC99; border-color: #33CC99;}
+		#service .list-item.post {color: #33871B; border-color: #33871B;}
+		#service .list-item.event {color: #D64C4C; border-color: #D64C4C;}
+		#service .list-item.citizen {color: #1B70AF; border-color: #1B70AF;}
+		#service .list-item.welfare {color: #FFE000; border-color: #FFE000;}
+		#service .list-item.central {color: #DA6FDD; border-color: #DA6FDD;}
+		#service .list-item.tnecg {color: #1E9E70; border-color: #1E9E70;}
+		#service .list-item.job {color: #C5EF14; border-color: #C5EF14;}
+		#service .list-item.evironment {color: #8A71DB; border-color: #8A71DB;}
+
+		#footer {
+			background: #33CC99;
+			height: 6em;
+			overflow: hidden;
+		}
+		#footer .curve {
+			background: #fff;
+			content: ' ';
+			display: block;
+			height: 70%;
+			border-radius: 100%;
+			position: absolute;
+			left: -1em;
+			right: -1em;
+			bottom: 4em;
 		}
 
 		.container {
 			max-width: 1000px;
 			margin: auto;
+			padding-top: 2em;
+			padding-bottom: 2em;
 		}
 
 		.brand {
-			width: 200px;
+			width: 320px;
+		}
+
+		.form-control .form-input {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 1em;
+			line-height: 1.5;
+			padding: 6px 12px;
 		}
 	</style>
 </head>
@@ -29,37 +109,40 @@
 			<div class="row">
 				<div>
 					<img src="image/igov-logo.svg" class="brand">
-					<div></div>
 				</div>
 			</div>
 			<div class="row">
-				<input type="text" />
+				<div class="form-control"><input type="text" class="form-input search-bar"/></div>
 				<span>搜尋</span>
 			</div>
 		</div>
 	</section>
-	<section>
+	<section id="service">
 		<div class="container">
 			<ul class="list">
-				<li class="list-item">交通資訊</li>
-				<li class="list-item">稅務服務</li>
-				<li class="list-item">繳費功能</li>
-				<li class="list-item">醫療衛生</li>
-				<li class="list-item">法條規範</li>
-				<li class="list-item">地方政府</li>
-				<li class="list-item">歷史古蹟</li>
-				<li class="list-item">觀光旅遊</li>
-				<li class="list-item">郵政服務</li>
-				<li class="list-item">藝文活動</li>
-				<li class="list-item">公民參與</li>
-				<li class="list-item">老人福利</li>
-				<li class="list-item">中央機構</li>
-				<li class="list-item">戶政機關</li>
-				<li class="list-item">就業輔導</li>
-				<li class="list-item">環保議題</li>
+				<li class="list-item transport"><img src="" class="list-icon"/><span class="label">交通資訊</span></li>
+				<li class="list-item tax"><img src="" class="list-icon"/><span class="label">稅務服務</span></li>
+				<li class="list-item payment"><img src="" class="list-icon"/><span class="label">繳費功能</span></li>
+				<li class="list-item medical"><img src="" class="list-icon"/><span class="label">醫療衛生</span></li>
+				<li class="list-item law"><img src="" class="list-icon"/><span class="label">法條規範</span></li>
+				<li class="list-item local"><img src="" class="list-icon"/><span class="label">地方政府</span></li>
+				<li class="list-item historic"><img src="" class="list-icon"/><span class="label">歷史古蹟</span></li>
+				<li class="list-item tourism"><img src="" class="list-icon"/><span class="label">觀光旅遊</span></li>
+				<li class="list-item post"><img src="" class="list-icon"/><span class="label">郵政服務</span></li>
+				<li class="list-item event"><img src="" class="list-icon"/><span class="label">藝文活動</span></li>
+				<li class="list-item citizen"><img src="" class="list-icon"/><span class="label">公民參與</span></li>
+				<li class="list-item welfare"><img src="" class="list-icon"/><span class="label">老人福利</span></li>
+				<li class="list-item central"><img src="" class="list-icon"/><span class="label">中央機構</span></li>
+				<li class="list-item tnecg"><img src="" class="list-icon"/><span class="label">戶政機關</span></li>
+				<li class="list-item job"><img src="" class="list-icon"/><span class="label">就業輔導</span></li>
+				<li class="list-item evironment"><img src="" class="list-icon"/><span class="label">環保議題</span></li>
 			</ul>
 		</div>
 	</section>
-	<h1>Igov</h1>
+	<section id="footer">
+		<div class="container">
+			<div class="curve"></div>
+		</div>
+	</section>
 </body>
 </html>
