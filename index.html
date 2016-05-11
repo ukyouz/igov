@@ -1,117 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8">
     <title>igov 安心政府</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <style>
-      body {
-      	font-size: 16px;
-      	font-family: arial, sans-serif;
-      }
-      section {
-      	background: #fff;
-      	position: relative;
-      	clear: both;
-      	overflow: hidden;
-      }
-      #header {
-      	text-align: center;
-      	border-top: 16px solid #33CC99;
-      	border-bottom: 1px solid #ddd;
-      }
-      #header .container {
-      	padding-top: 6em;
-      }
-      #header .row {
-      	margin-bottom: 1em;
-      }
-      #header .row > div {
-      	display: inline-block;
-      }
-      #header .search-bar {
-      	width: 30em;
-      }
-      #service .container {
-      	padding-top: 3em;
-      	padding-bottom: 3em;
-      }
-      #service .list {
-      	max-width: 38em;
-      	text-align: center;
-      	margin: auto;
-      }
-      #service .list-item {
-      	float: left;
-      	width: 6em;
-      	height: 6em;
-      	margin: .5em;
-      	padding: 1em;
-      	border: 1px solid #ddd;
-      	border-radius: 24px;
-      }
-      #service .list-item .list-icon {
-      	background: url('image/services-color.svg') no-repeat;
-      	background-size: 18em;
-      	width: 4.5em;
-      	height: 4.5em;
-      	margin: auto;
-      }
-      #service .list-item.transport {color: #33CC99; border-color: #33CC99;}
-      #service .list-item.transport .list-icon {background-position: 0 0;}
-      #service .list-item.tax {color: #4BB735; border-color: #4BB735;}
-      #service .list-item.tax .list-icon {background-position: -4.5em 0;}
-      #service .list-item.payment {color: #29C5EF; border-color: #29C5EF;}
-      #service .list-item.payment .list-icon {background-position: -9em 0;}
-      #service .list-item.medical {color: #F27968; border-color: #F27968;}
-      #service .list-item.medical .list-icon {background-position: -13.5em 0;}
-      #service .list-item.law {color: #6852C6; border-color: #6852C6;}
-      #service .list-item.law .list-icon {background-position: 0 -4.5em;}
-      #service .list-item.local {color: #FCA61D; border-color: #FCA61D;}
-      #service .list-item.local .list-icon {background-position: -4.5em -4.5em;}
-      #service .list-item.historic {color: #BA8642; border-color: #BA8642;}
-      #service .list-item.historic .list-icon {background-position: -9em -4.5em;}
-      #service .list-item.tourism {color: #33CC99; border-color: #33CC99;}
-      #service .list-item.tourism .list-icon {background-position: -13.5em -4.5em;}
-      #service .list-item.post {color: #33871B; border-color: #33871B;}
-      #service .list-item.post .list-icon {background-position: 0 -9em;}
-      #service .list-item.event {color: #D64C4C; border-color: #D64C4C;}
-      #service .list-item.event .list-icon {background-position: -4.5em -9em;}
-      #service .list-item.citizen {color: #1B70AF; border-color: #1B70AF;}
-      #service .list-item.citizen .list-icon {background-position: -9em -9em;}
-      #service .list-item.welfare {color: #FFE000; border-color: #FFE000;}
-      #service .list-item.welfare .list-icon {background-position: -13.5em -9em;}
-      #service .list-item.central {color: #DA6FDD; border-color: #DA6FDD;}
-      #service .list-item.central .list-icon {background-position: 0 -13.5em;}
-      #service .list-item.tnecg {color: #1E9E70; border-color: #1E9E70;}
-      #service .list-item.tnecg .list-icon {background-position: -4.5em -13.5em;}
-      #service .list-item.job {color: #C5EF14; border-color: #C5EF14;}
-      #service .list-item.job .list-icon {background-position: -9em -13.5em;}
-      #service .list-item.evironment {color: #8A71DB; border-color: #8A71DB;}
-      #service .list-item.evironment .list-icon {background-position: -13.5em -13.5em;}
-      #footer {
-      	background: #33CC99;
-      	height: 6em;
-      }
-      .container {
-      	max-width: 1000px;
-      	margin: auto;
-      	padding-top: 2em;
-      	padding-bottom: 2em;
-      	overflow: hidden;
-      }
-      .brand {
-      	width: 320px;
-      }
-      .form-control .form-input {
-      	border: 1px solid #ccc;
-      	border-radius: 4px;
-      	font-size: 1em;
-      	line-height: 1.5;
-      	padding: 6px 12px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
   </head>
   <body></body>
   <section id="header">
@@ -128,59 +24,99 @@
   </section>
   <section id="service">
     <div class="container">
-      <ul class="list">
-        <li class="list-item transport">
+      <div anchor="" class="list">
+        <div data-list="{&quot;name&quot;:&quot;transport&quot;,&quot;links&quot;:[&quot;交通1&quot;,&quot;交通2&quot;]}" class="list-item transport">
           <div class="list-icon"></div><span class="label">交通資訊</span>
-        </li>
-        <li class="list-item tax">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;tax&quot;,&quot;links&quot;:[&quot;稅務1&quot;,&quot;稅務2&quot;]}" class="list-item tax">
           <div class="list-icon"></div><span class="label">稅務服務</span>
-        </li>
-        <li class="list-item payment">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;payment&quot;,&quot;links&quot;:[&quot;繳費1&quot;,&quot;繳費2&quot;]}" class="list-item payment">
           <div class="list-icon"></div><span class="label">繳費功能</span>
-        </li>
-        <li class="list-item medical">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;medical&quot;,&quot;links&quot;:[&quot;醫療1&quot;,&quot;醫療2&quot;]}" class="list-item medical">
           <div class="list-icon"></div><span class="label">醫療衛生</span>
-        </li>
-        <li class="list-item law">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;law&quot;,&quot;links&quot;:[&quot;法條1&quot;,&quot;法條2&quot;]}" class="list-item law">
           <div class="list-icon"></div><span class="label">法條規範</span>
-        </li>
-        <li class="list-item local">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;local&quot;,&quot;links&quot;:[&quot;地方1&quot;,&quot;地方2&quot;]}" class="list-item local">
           <div class="list-icon"></div><span class="label">地方政府</span>
-        </li>
-        <li class="list-item historic">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;historic&quot;,&quot;links&quot;:[&quot;歷史1&quot;,&quot;歷史2&quot;]}" class="list-item historic">
           <div class="list-icon"></div><span class="label">歷史古蹟</span>
-        </li>
-        <li class="list-item tourism">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;tourism&quot;,&quot;links&quot;:[&quot;觀光1&quot;,&quot;觀光2&quot;]}" class="list-item tourism">
           <div class="list-icon"></div><span class="label">觀光旅遊</span>
-        </li>
-        <li class="list-item post">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;post&quot;,&quot;links&quot;:[&quot;郵政1&quot;,&quot;郵政2&quot;]}" class="list-item post">
           <div class="list-icon"></div><span class="label">郵政服務</span>
-        </li>
-        <li class="list-item event">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;event&quot;,&quot;links&quot;:[&quot;藝文1&quot;,&quot;藝文2&quot;]}" class="list-item event">
           <div class="list-icon"></div><span class="label">藝文活動</span>
-        </li>
-        <li class="list-item citizen">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;citizen&quot;,&quot;links&quot;:[&quot;公民1&quot;,&quot;公民2&quot;]}" class="list-item citizen">
           <div class="list-icon"></div><span class="label">公民參與</span>
-        </li>
-        <li class="list-item welfare">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;welfare&quot;,&quot;links&quot;:[&quot;老人1&quot;,&quot;老人2&quot;]}" class="list-item welfare">
           <div class="list-icon"></div><span class="label">老人福利</span>
-        </li>
-        <li class="list-item central">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;central&quot;,&quot;links&quot;:[&quot;中央1&quot;,&quot;中央2&quot;]}" class="list-item central">
           <div class="list-icon"></div><span class="label">中央機構</span>
-        </li>
-        <li class="list-item tnecg">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;tnecg&quot;,&quot;links&quot;:[&quot;戶政1&quot;,&quot;戶政2&quot;]}" class="list-item tnecg">
           <div class="list-icon"></div><span class="label">戶政機關</span>
-        </li>
-        <li class="list-item job">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;job&quot;,&quot;links&quot;:[&quot;就業1&quot;,&quot;就業2&quot;]}" class="list-item job">
           <div class="list-icon"></div><span class="label">就業輔導</span>
-        </li>
-        <li class="list-item evironment">
+        </div>
+        <div data-list="{&quot;name&quot;:&quot;evironment&quot;,&quot;links&quot;:[&quot;環保1&quot;,&quot;環保2&quot;]}" class="list-item evironment">
           <div class="list-icon"></div><span class="label">環保議題</span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
   <section id="footer">
-    <div class="container"></div>
+    <div class="container">
+      <div class="col">
+        <div class="col"><img src="image/igov-logo-white.svg" class="icon igov"></div>
+        <div class="col slogan"><span>Suitable</span><span>Secure</span><span>Smart</span></div>
+      </div>
+      <div class="col">
+        <div class="col"><img src="image/fb-icon.png" class="icon"></div>
+        <div class="col"><a href="https://www.facebook.com/iGov.service/" target="_blank">安心政府i-Gov</a></div>
+      </div>
+      <div class="col">
+        <div class="col"><span>E-mail:xxxs</span></div>
+      </div>
+    </div>
   </section>
+  <script id="template" type="text/x-jquery-tmpl">
+    <div class="list-block ${name}">
+    	<ul>
+    		{{each links}}<li>${$value}</li>{{/each}}
+    	</ul>
+    </div>
+  </script>
+  <script type="text/javascript">
+    $('.list-item').click(function(){
+    	$('.list .list-item').removeClass('active');
+    	$(this).addClass('active');
+    	$data = $(this).attr('data-list');
+    	$data = $.parseJSON($data);
+    	$n = $(this).prevAll().length;
+    	$n = $n-$n%4+4-1;
+    	//- console.log($n-$n%4+4);
+    	if($n == $('.list').attr('anchor')) {
+    		$('.list .list-block').remove();
+    		$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') );
+    	} else {
+    		$('.list .list-block').slideUp(function(){$(this).remove()});
+    		$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') ).hide().slideDown();
+    	}
+    	$('.list').attr('anchor', $n);
+    	//- console.log(	$('.list').children(':eq('+$n+')') );
+    });
+    //- $('.payment').clone().appendTo('.list');
+  </script>
 </html>

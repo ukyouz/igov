@@ -1,0 +1,199 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 16px;
+	font-family: arial, sans-serif;
+}
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+section {
+	background: #fff;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+}
+.container {
+	max-width: 1000px;
+	margin: auto;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	overflow: hidden;
+}
+.form-control .form-input {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 1em;
+	line-height: 1.5;
+	padding: 6px 12px;
+}
+code {
+	display: none;
+}
+
+/*************************************
+ * header
+ *************************************/
+
+.brand {
+	width: 320px;
+}
+#header {
+	text-align: center;
+	border-top: 16px solid #33CC99;
+	border-bottom: 1px solid #ddd;
+}
+#header .container {
+	padding-top: 6em;
+}
+#header .row {
+	margin-bottom: 1em;
+}
+#header .row > div {
+	display: inline-block;
+}
+#header .search-bar {
+	width: 30em;
+}
+
+
+
+/*************************************
+ * service
+ *************************************/
+
+#service .container {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+#service .list {
+	max-width: 38em;
+	text-align: center;
+	margin: auto;
+	position: relative;
+}
+#service .list-item {
+	display: inline-block;
+	width: 21.9%;
+	height: 20%;
+	margin-left: 2.4%;
+	margin-bottom: 2.5%;
+	padding: 1em;
+	border: 1px solid #33CC99;
+	color: #333;
+	border-radius: 24px;
+	cursor: pointer;
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(top, #fff 0%, #efefef 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #fff), color-stop(100%, #efefef));
+	background: -webkit-linear-gradient(top, #fff 0%, #efefef 100%);
+	background: -o-linear-gradient(top, #fff 0%, #efefef 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #efefef 100%);
+	background: linear-gradient(to bottom, #fff 0%, #efefef 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#efefef', GradientType=0 );
+}
+#service .list-block {
+	width: 100%;
+	background: #ddd;
+	text-align: left;
+	margin-bottom: 2.5%;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#service .list-item .list-icon {
+	background: url('../image/services-mono.svg') no-repeat;
+	background-size: 400%;
+	width: 4.5em;
+	height: 4.5em;
+	margin: auto;
+}
+#service .list-item:hover {
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(top, #fff 0%, #eaeaea 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #fff), color-stop(100%, #eaeaea));
+	background: -webkit-linear-gradient(top, #fff 0%, #eaeaea 100%);
+	background: -o-linear-gradient(top, #fff 0%, #eaeaea 100%);
+	background: -ms-linear-gradient(top, #fff 0%, #eaeaea 100%);
+	background: linear-gradient(to bottom, #fff 0%, #eaeaea 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#eaeaea', GradientType=0 );
+}
+#service .list-item:hover .list-icon, #service .list-item.active .list-icon {
+	background-image: url('../image/services-color.svg');
+}
+#service .list-item.transport .list-icon {background-position: 0 0;}
+#service .list-item.tax .list-icon {background-position: 33.333% 0;}
+#service .list-item.payment .list-icon {background-position: 66.667% 0;}
+#service .list-item.medical .list-icon {background-position: 100% 0;}
+#service .list-item.law .list-icon {background-position: 0 33.333%;}
+#service .list-item.local .list-icon {background-position: 33.333% 33.333%;}
+#service .list-item.historic .list-icon {background-position: 66.667% 33.333%;}
+#service .list-item.tourism .list-icon {background-position: 100% 33.333%;}
+#service .list-item.post .list-icon {background-position: 0 66.667%;}
+#service .list-item.event .list-icon {background-position: 33.333% 66.667%;}
+#service .list-item.citizen .list-icon {background-position: 66.667% 66.667%;}
+#service .list-item.welfare .list-icon {background-position: 100% 66.667%;}
+#service .list-item.central .list-icon {background-position: 0 100%;}
+#service .list-item.tnecg .list-icon {background-position: 33.333% 100%;}
+#service .list-item.job .list-icon {background-position: 66.667% 100%;}
+#service .list-item.evironment .list-icon {background-position: 100% 100%;}
+
+#service .list-item.transport:hover, #service .list-item.transport.active {color: #33CC99; border-color: #33CC99;}
+#service .list-item.tax:hover, #service .list-item.tax.active {color: #4BB735; border-color: #4BB735;}
+#service .list-item.payment:hover, #service .list-item.payment.active {color: #29C5EF; border-color: #29C5EF;}
+#service .list-item.medical:hover, #service .list-item.medical.active {color: #F27968; border-color: #F27968;}
+#service .list-item.law:hover, #service .list-item.law.active {color: #6852C6; border-color: #6852C6;}
+#service .list-item.local:hover, #service .list-item.local.active {color: #FCA61D; border-color: #FCA61D;}
+#service .list-item.historic:hover, #service .list-item.historic.active {color: #BA8642; border-color: #BA8642;}
+#service .list-item.tourism:hover, #service .list-item.tourism.active {color: #33CC99; border-color: #33CC99;}
+#service .list-item.post:hover, #service .list-item.post.active {color: #33871B; border-color: #33871B;}
+#service .list-item.event:hover, #service .list-item.event.active {color: #D64C4C; border-color: #D64C4C;}
+#service .list-item.citizen:hover, #service .list-item.citizen.active {color: #1B70AF; border-color: #1B70AF;}
+#service .list-item.welfare:hover, #service .list-item.welfare.active {color: #FFE000; border-color: #FFE000;}
+#service .list-item.central:hover, #service .list-item.central.active {color: #DA6FDD; border-color: #DA6FDD;}
+#service .list-item.tnecg:hover, #service .list-item.tnecg.active {color: #1E9E70; border-color: #1E9E70;}
+#service .list-item.job:hover, #service .list-item.job.active {color: #C5EF14; border-color: #C5EF14;}
+#service .list-item.evironment:hover, #service .list-item.evironment.active {color: #8A71DB; border-color: #8A71DB;}
+
+#service .list-block ul li {
+	display: inline-block;
+}
+
+
+/*************************************
+ * footer
+ *************************************/
+
+#footer {
+	background: #33CC99;
+	color: #fff;
+	text-align: center;
+}
+#footer .col {
+	margin-right: .5em;
+	margin-left: .5em;
+	display: inline-block;
+	vertical-align: middle;
+}
+#footer .col .col {
+	margin-left: 0em;
+}
+#footer .icon {
+	height: 1.5em;
+}
+#footer .icon.igov {
+	height: 2.5em;
+	margin-bottom: -0.5em;
+}
+#footer .slogan {
+	text-align: left;
+	margin-top: -1em;
+	margin-bottom: -1em;
+}
+#footer .slogan span {
+	display: block;
+	font-size: 0.8em;
+}

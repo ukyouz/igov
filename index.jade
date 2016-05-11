@@ -5,112 +5,9 @@ html(lang='zh-TW')
 		title igov 安心政府
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='stylesheet', type='text/css', href='css/reset.css')
-		style.
-			body {
-				font-size: 16px;
-				font-family: arial, sans-serif;
-			}
-			section {
-				background: #fff;
-				position: relative;
-				clear: both;
-				overflow: hidden;
-			}
-			#header {
-				text-align: center;
-				border-top: 16px solid #33CC99;
-				border-bottom: 1px solid #ddd;
-			}
-			#header .container {
-				padding-top: 6em;
-			}
-			#header .row {
-				margin-bottom: 1em;
-			}
-			#header .row > div {
-				display: inline-block;
-			}
-			#header .search-bar {
-				width: 30em;
-			}
-			#service .container {
-				padding-top: 3em;
-				padding-bottom: 3em;
-			}
-			#service .list {
-				max-width: 38em;
-				text-align: center;
-				margin: auto;
-			}
-			#service .list-item {
-				float: left;
-				width: 6em;
-				height: 6em;
-				margin: .5em;
-				padding: 1em;
-				border: 1px solid #ddd;
-				border-radius: 24px;
-			}
-			#service .list-item .list-icon {
-				background: url('image/services-color.svg') no-repeat;
-				background-size: 18em;
-				width: 4.5em;
-				height: 4.5em;
-				margin: auto;
-			}
-			#service .list-item.transport {color: #33CC99; border-color: #33CC99;}
-			#service .list-item.transport .list-icon {background-position: 0 0;}
-			#service .list-item.tax {color: #4BB735; border-color: #4BB735;}
-			#service .list-item.tax .list-icon {background-position: -4.5em 0;}
-			#service .list-item.payment {color: #29C5EF; border-color: #29C5EF;}
-			#service .list-item.payment .list-icon {background-position: -9em 0;}
-			#service .list-item.medical {color: #F27968; border-color: #F27968;}
-			#service .list-item.medical .list-icon {background-position: -13.5em 0;}
-			#service .list-item.law {color: #6852C6; border-color: #6852C6;}
-			#service .list-item.law .list-icon {background-position: 0 -4.5em;}
-			#service .list-item.local {color: #FCA61D; border-color: #FCA61D;}
-			#service .list-item.local .list-icon {background-position: -4.5em -4.5em;}
-			#service .list-item.historic {color: #BA8642; border-color: #BA8642;}
-			#service .list-item.historic .list-icon {background-position: -9em -4.5em;}
-			#service .list-item.tourism {color: #33CC99; border-color: #33CC99;}
-			#service .list-item.tourism .list-icon {background-position: -13.5em -4.5em;}
-			#service .list-item.post {color: #33871B; border-color: #33871B;}
-			#service .list-item.post .list-icon {background-position: 0 -9em;}
-			#service .list-item.event {color: #D64C4C; border-color: #D64C4C;}
-			#service .list-item.event .list-icon {background-position: -4.5em -9em;}
-			#service .list-item.citizen {color: #1B70AF; border-color: #1B70AF;}
-			#service .list-item.citizen .list-icon {background-position: -9em -9em;}
-			#service .list-item.welfare {color: #FFE000; border-color: #FFE000;}
-			#service .list-item.welfare .list-icon {background-position: -13.5em -9em;}
-			#service .list-item.central {color: #DA6FDD; border-color: #DA6FDD;}
-			#service .list-item.central .list-icon {background-position: 0 -13.5em;}
-			#service .list-item.tnecg {color: #1E9E70; border-color: #1E9E70;}
-			#service .list-item.tnecg .list-icon {background-position: -4.5em -13.5em;}
-			#service .list-item.job {color: #C5EF14; border-color: #C5EF14;}
-			#service .list-item.job .list-icon {background-position: -9em -13.5em;}
-			#service .list-item.evironment {color: #8A71DB; border-color: #8A71DB;}
-			#service .list-item.evironment .list-icon {background-position: -13.5em -13.5em;}
-			#footer {
-				background: #33CC99;
-				height: 6em;
-			}
-			.container {
-				max-width: 1000px;
-				margin: auto;
-				padding-top: 2em;
-				padding-bottom: 2em;
-				overflow: hidden;
-			}
-			.brand {
-				width: 320px;
-			}
-			.form-control .form-input {
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				font-size: 1em;
-				line-height: 1.5;
-				padding: 6px 12px;
-			}
+		link(rel='stylesheet', type='text/css', href='css/index.css')
+		script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+		script(type='text/javascript', src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js')
 	body
 	section#header
 		.container
@@ -123,54 +20,95 @@ html(lang='zh-TW')
 				span 搜尋
 	section#service
 		.container
-			ul.list
-				li.list-item.transport
+			.list(anchor='')
+				.list-item.transport(data-list='{"name":"transport","links":["交通1","交通2"]}')
 					.list-icon
 					span.label 交通資訊
-				li.list-item.tax
+				.list-item.tax(data-list='{"name":"tax","links":["稅務1","稅務2"]}')
 					.list-icon
 					span.label 稅務服務
-				li.list-item.payment
+				.list-item.payment(data-list='{"name":"payment","links":["繳費1","繳費2"]}')
 					.list-icon
 					span.label 繳費功能
-				li.list-item.medical
+				.list-item.medical(data-list='{"name":"medical","links":["醫療1","醫療2"]}')
 					.list-icon
 					span.label 醫療衛生
-				li.list-item.law
+				.list-item.law(data-list='{"name":"law","links":["法條1","法條2"]}')
 					.list-icon
 					span.label 法條規範
-				li.list-item.local
+				.list-item.local(data-list='{"name":"local","links":["地方1","地方2"]}')
 					.list-icon
 					span.label 地方政府
-				li.list-item.historic
+				.list-item.historic(data-list='{"name":"historic","links":["歷史1","歷史2"]}')
 					.list-icon
 					span.label 歷史古蹟
-				li.list-item.tourism
+				.list-item.tourism(data-list='{"name":"tourism","links":["觀光1","觀光2"]}')
 					.list-icon
 					span.label 觀光旅遊
-				li.list-item.post
+				.list-item.post(data-list='{"name":"post","links":["郵政1","郵政2"]}')
 					.list-icon
 					span.label 郵政服務
-				li.list-item.event
+				.list-item.event(data-list='{"name":"event","links":["藝文1","藝文2"]}')
 					.list-icon
 					span.label 藝文活動
-				li.list-item.citizen
+				.list-item.citizen(data-list='{"name":"citizen","links":["公民1","公民2"]}')
 					.list-icon
 					span.label 公民參與
-				li.list-item.welfare
+				.list-item.welfare(data-list='{"name":"welfare","links":["老人1","老人2"]}')
 					.list-icon
 					span.label 老人福利
-				li.list-item.central
+				.list-item.central(data-list='{"name":"central","links":["中央1","中央2"]}')
 					.list-icon
 					span.label 中央機構
-				li.list-item.tnecg
+				.list-item.tnecg(data-list='{"name":"tnecg","links":["戶政1","戶政2"]}')
 					.list-icon
 					span.label 戶政機關
-				li.list-item.job
+				.list-item.job(data-list='{"name":"job","links":["就業1","就業2"]}')
 					.list-icon
 					span.label 就業輔導
-				li.list-item.evironment
+				.list-item.evironment(data-list='{"name":"evironment","links":["環保1","環保2"]}')
 					.list-icon
 					span.label 環保議題
 	section#footer
 		.container
+			.col
+				.col
+					img.icon.igov(src='image/igov-logo-white.svg')
+				.col.slogan
+					span Suitable
+					span Secure
+					span Smart
+			.col
+				.col
+					img.icon(src='image/fb-icon.png')
+				.col
+					a(href='https://www.facebook.com/iGov.service/', target='_blank') 安心政府i-Gov
+			.col
+				.col
+					span E-mail:xxxs
+	script#template(type="text/x-jquery-tmpl").
+		<div class="list-block ${name}">
+			<ul>
+				{{each links}}<li>${$value}</li>{{/each}}
+			</ul>
+		</div>
+	script(type='text/javascript').
+		$('.list-item').click(function(){
+			$('.list .list-item').removeClass('active');
+			$(this).addClass('active');
+			$data = $(this).attr('data-list');
+			$data = $.parseJSON($data);
+			$n = $(this).prevAll().length;
+			$n = $n-$n%4+4-1;
+			//- console.log($n-$n%4+4);
+			if($n == $('.list').attr('anchor')) {
+				$('.list .list-block').remove();
+				$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') );
+			} else {
+				$('.list .list-block').slideUp(function(){$(this).remove()});
+				$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') ).hide().slideDown();
+			}
+			$('.list').attr('anchor', $n);
+			//- console.log(	$('.list').children(':eq('+$n+')') );
+		});
+		//- $('.payment').clone().appendTo('.list');
