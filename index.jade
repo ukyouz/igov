@@ -98,7 +98,7 @@ html(lang='zh-TW')
 			$(this).addClass('active');
 			$data = $(this).attr('data-list');
 			$data = $.parseJSON($data);
-			$n = $(this).prevAll().length;
+			$n = $(this).prevAll('.list-item').length;
 			$n = $n-$n%4+4-1;
 			//- console.log($n-$n%4+4);
 			if($n == $('.list').attr('anchor')) {
