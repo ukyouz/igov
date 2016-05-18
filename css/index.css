@@ -72,14 +72,17 @@ code {
 	max-width: 38em;
 	text-align: center;
 	margin: auto;
+	padding: 0 .3em;
 	position: relative;
 }
+#service .col-3 {
+	width: 25%;
+	padding: .5em;
+	display: block;
+	float: left;
+}
 #service .list-item {
-	display: inline-block;
-	width: 21.9%;
-	height: 20%;
-	margin-left: 2.4%;
-	margin-bottom: 2.5%;
+	width: 100%;
 	padding: 1em;
 	border: 1px solid #33CC99;
 	color: #333;
@@ -94,15 +97,24 @@ code {
 	background: linear-gradient(to bottom, #fff 0%, #efefef 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#efefef', GradientType=0 );
 }
-#service .list-block {
+#service .col-12 {
 	width: 100%;
-	background: #ddd;
 	text-align: left;
-	margin-bottom: 2.5%;
+	clear: left;
+	padding-top: .25em;
+	padding-bottom: .25em;
+}
+#service .col-12 .list-item {
+	background: #ddd;
+	border: none;
+	border-radius: 0;
 	padding-left: 1em;
 	padding-right: 1em;
 	padding-top: 1em;
 	padding-bottom: 1em;
+}
+#service .col-12 ul li {
+	display: inline-block;
 }
 #service .list-item .list-icon {
 	background: url('../image/services-mono.svg') no-repeat;
@@ -110,6 +122,46 @@ code {
 	width: 4.5em;
 	height: 4.5em;
 	margin: auto;
+}
+@media (max-width: 512px) {
+	#service .list-item {
+		padding: 1em .5em;
+		border-radius: 18px;
+	}
+	#service .list-item .list-icon {
+		width: 3em;
+		height: 3em;
+	}
+}
+@media (max-width: 400px) {
+	#service .list-item {
+		padding: .75em .5em;
+		border-radius: 16px;
+	}
+	#service .list-item .list-icon {
+		width: 2.5em;
+		height: 2.5em;
+	}
+}
+@media (max-width: 375px) {
+	#service .col-3 {
+		padding: .3em;
+	}
+	#service .list-item {
+		padding: .5em .5em;
+		border-radius: 16px;
+	}
+	#service .list-item .list-icon {
+		width: 2.5em;
+		height: 2.5em;
+	}
+	#service .list-item .label {
+		width: 2em;
+		overflow: hidden;
+		display: block;
+		white-space: nowrap;
+		margin: auto;
+	}
 }
 #service .list-item:hover {
 	background: rgba(255,255,255,1);
@@ -157,10 +209,6 @@ code {
 #service .list-item.tnecg:hover, #service .list-item.tnecg.active {color: #1E9E70; border-color: #1E9E70;}
 #service .list-item.job:hover, #service .list-item.job.active {color: #C5EF14; border-color: #C5EF14;}
 #service .list-item.evironment:hover, #service .list-item.evironment.active {color: #8A71DB; border-color: #8A71DB;}
-
-#service .list-block ul li {
-	display: inline-block;
-}
 
 
 /*************************************

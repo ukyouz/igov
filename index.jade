@@ -21,54 +21,70 @@ html(lang='zh-TW')
 	section#service
 		.container
 			.list(anchor='')
-				.list-item.transport(data-list='{"name":"transport","links":["交通1","交通2"]}')
-					.list-icon
-					span.label 交通資訊
-				.list-item.tax(data-list='{"name":"tax","links":["稅務1","稅務2"]}')
-					.list-icon
-					span.label 稅務服務
-				.list-item.payment(data-list='{"name":"payment","links":["繳費1","繳費2"]}')
-					.list-icon
-					span.label 繳費功能
-				.list-item.medical(data-list='{"name":"medical","links":["醫療1","醫療2"]}')
-					.list-icon
-					span.label 醫療衛生
-				.list-item.law(data-list='{"name":"law","links":["法條1","法條2"]}')
-					.list-icon
-					span.label 法條規範
-				.list-item.local(data-list='{"name":"local","links":["地方1","地方2"]}')
-					.list-icon
-					span.label 地方政府
-				.list-item.historic(data-list='{"name":"historic","links":["歷史1","歷史2"]}')
-					.list-icon
-					span.label 歷史古蹟
-				.list-item.tourism(data-list='{"name":"tourism","links":["觀光1","觀光2"]}')
-					.list-icon
-					span.label 觀光旅遊
-				.list-item.post(data-list='{"name":"post","links":["郵政1","郵政2"]}')
-					.list-icon
-					span.label 郵政服務
-				.list-item.event(data-list='{"name":"event","links":["藝文1","藝文2"]}')
-					.list-icon
-					span.label 藝文活動
-				.list-item.citizen(data-list='{"name":"citizen","links":["公民1","公民2"]}')
-					.list-icon
-					span.label 公民參與
-				.list-item.welfare(data-list='{"name":"welfare","links":["老人1","老人2"]}')
-					.list-icon
-					span.label 老人福利
-				.list-item.central(data-list='{"name":"central","links":["中央1","中央2"]}')
-					.list-icon
-					span.label 中央機構
-				.list-item.tnecg(data-list='{"name":"tnecg","links":["戶政1","戶政2"]}')
-					.list-icon
-					span.label 戶政機關
-				.list-item.job(data-list='{"name":"job","links":["就業1","就業2"]}')
-					.list-icon
-					span.label 就業輔導
-				.list-item.evironment(data-list='{"name":"evironment","links":["環保1","環保2"]}')
-					.list-icon
-					span.label 環保議題
+				.col-3
+					.list-item.transport(data-list='{"name":"transport","links":["交通1","交通2"]}')
+						.list-icon
+						span.label 交通資訊
+				.col-3
+					.list-item.tax(data-list='{"name":"tax","links":["稅務1","稅務2"]}')
+						.list-icon
+						span.label 稅務服務
+				.col-3
+					.list-item.payment(data-list='{"name":"payment","links":["繳費1","繳費2"]}')
+						.list-icon
+						span.label 繳費功能
+				.col-3
+					.list-item.medical(data-list='{"name":"medical","links":["醫療1","醫療2"]}')
+						.list-icon
+						span.label 醫療衛生
+				.col-3
+					.list-item.law(data-list='{"name":"law","links":["法條1","法條2"]}')
+						.list-icon
+						span.label 法條規範
+				.col-3
+					.list-item.local(data-list='{"name":"local","links":["地方1","地方2"]}')
+						.list-icon
+						span.label 地方政府
+				.col-3
+					.list-item.historic(data-list='{"name":"historic","links":["歷史1","歷史2"]}')
+						.list-icon
+						span.label 歷史古蹟
+				.col-3
+					.list-item.tourism(data-list='{"name":"tourism","links":["觀光1","觀光2"]}')
+						.list-icon
+						span.label 觀光旅遊
+				.col-3
+					.list-item.post(data-list='{"name":"post","links":["郵政1","郵政2"]}')
+						.list-icon
+						span.label 郵政服務
+				.col-3
+					.list-item.event(data-list='{"name":"event","links":["藝文1","藝文2"]}')
+						.list-icon
+						span.label 藝文活動
+				.col-3
+					.list-item.citizen(data-list='{"name":"citizen","links":["公民1","公民2"]}')
+						.list-icon
+						span.label 公民參與
+				.col-3
+					.list-item.welfare(data-list='{"name":"welfare","links":["老人1","老人2"]}')
+						.list-icon
+						span.label 老人福利
+				.col-3
+					.list-item.central(data-list='{"name":"central","links":["中央1","中央2"]}')
+						.list-icon
+						span.label 中央機構
+				.col-3
+					.list-item.tnecg(data-list='{"name":"tnecg","links":["戶政1","戶政2"]}')
+						.list-icon
+						span.label 戶政機關
+				.col-3
+					.list-item.job(data-list='{"name":"job","links":["就業1","就業2"]}')
+						.list-icon
+						span.label 就業輔導
+				.col-3
+					.list-item.evironment(data-list='{"name":"evironment","links":["環保1","環保2"]}')
+						.list-icon
+						span.label 環保議題
 	section#footer
 		.container
 			.col
@@ -87,28 +103,35 @@ html(lang='zh-TW')
 				.col
 					span E-mail:xxxs
 	script#template(type="text/x-jquery-tmpl").
-		<div class="list-block ${name}">
+		<div class="col-12">
+		<div class="list-item ${name}">
 			<ul>
 				{{each links}}<li>${$value}</li>{{/each}}
 			</ul>
 		</div>
+		</div>
 	script(type='text/javascript').
-		$('.list-item').click(function(){
+		$('#service .list-item').click(function(){
 			$('.list .list-item').removeClass('active');
 			$(this).addClass('active');
 			$data = $(this).attr('data-list');
 			$data = $.parseJSON($data);
-			$n = $(this).prevAll('.list-item').length;
-			$n = $n-$n%4+4-1;
+			$n = $(this).parent('.col-3').prevAll('.col-3').length;
+			$a = $n-$n%4+4-1;
 			//- console.log($n-$n%4+4);
-			if($n == $('.list').attr('anchor')) {
-				$('.list .list-block').remove();
-				$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') );
-			} else {
-				$('.list .list-block').slideUp(function(){$(this).remove()});
-				$('#template').tmpl($data).insertAfter( $('.list .list-item:eq('+$n+')') ).hide().slideDown();
+			if($n == $('.list').attr('data-open')) {
+				$('.list .col-12').slideUp(function(){$(this).remove()});
+				return;
 			}
-			$('.list').attr('anchor', $n);
+
+			if($a == $('.list').attr('anchor')) {
+				$('.list .col-12').remove();
+				$('#template').tmpl($data).insertAfter( $('.list .col-3:eq('+$a+')') );
+			} else {
+				$('.list .col-12').slideUp(function(){$(this).remove()});
+				$('#template').tmpl($data).insertAfter( $('.list .col-3:eq('+$a+')') ).hide().slideDown();
+			}
+			$('.list').attr({'anchor': $a, 'data-open': $n});
 			//- console.log(	$('.list').children(':eq('+$n+')') );
 		});
 		//- $('.payment').clone().appendTo('.list');
