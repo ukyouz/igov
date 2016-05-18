@@ -163,7 +163,7 @@ code {
 		margin: auto;
 	}
 }
-#service .list-item:hover {
+#service .col-3 .list-item:hover {
 	background: rgba(255,255,255,1);
 	background: -moz-linear-gradient(top, #fff 0%, #eaeaea 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, #fff), color-stop(100%, #eaeaea));
@@ -173,7 +173,7 @@ code {
 	background: linear-gradient(to bottom, #fff 0%, #eaeaea 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#eaeaea', GradientType=0 );
 }
-#service .list-item:hover .list-icon, #service .list-item.active .list-icon {
+#service .col-3 .list-item:hover .list-icon, #service .list-item.active .list-icon {
 	background-image: url('../image/services-color.svg');
 }
 #service .list-item.transport .list-icon {background-position: 0 0;}

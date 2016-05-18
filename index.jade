@@ -113,7 +113,6 @@ html(lang='zh-TW')
 	script(type='text/javascript').
 		$('#service .list-item').click(function(){
 			$('.list .list-item').removeClass('active');
-			$(this).addClass('active');
 			$data = $(this).attr('data-list');
 			$data = $.parseJSON($data);
 			$n = $(this).parent('.col-3').prevAll('.col-3').length;
@@ -123,7 +122,8 @@ html(lang='zh-TW')
 				$('.list .col-12').slideUp(function(){$(this).remove()});
 				return;
 			}
-
+			
+			$(this).addClass('active');
 			if($a == $('.list').attr('anchor')) {
 				$('.list .col-12').remove();
 				$('#template').tmpl($data).insertAfter( $('.list .col-3:eq('+$a+')') );
