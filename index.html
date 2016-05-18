@@ -142,6 +142,7 @@
     	//- console.log($n-$n%4+4);
     	if($n == $('.list').attr('data-open')) {
     		$('.list .col-12').slideUp(function(){$(this).remove()});
+    		$('.list').removeAttr('anchor').removeAttr('data-open');
     		return;
     	}
     	
