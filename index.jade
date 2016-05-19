@@ -20,7 +20,7 @@ html(lang='zh-TW')
 				span 搜尋
 	section#service
 		.container
-			.list(anchor='')
+			.list
 				.col-3
 					.list-item.transport(data-list='{"name":"transport","links":["交通1","交通2"]}')
 						.list-icon
@@ -30,6 +30,22 @@ html(lang='zh-TW')
 						.list-icon
 						span.label 稅務服務
 				.col-3
+					.list-item.post(data-list='{"name":"post","links":["郵政1","郵政2"]}')
+						.list-icon
+						span.label 郵政服務
+				.col-3
+					.list-item.tourism(data-list='{"name":"tourism","links":["觀光1","觀光2"]}')
+						.list-icon
+						span.label 觀光旅遊
+				.col-3
+					.list-item.event(data-list='{"name":"event","links":["藝文1","藝文2"]}')
+						.list-icon
+						span.label 藝文活動
+				.col-3
+					.list-item.job(data-list='{"name":"job","links":["就業1","就業2"]}')
+						.list-icon
+						span.label 就業輔導
+				.col-3
 					.list-item.payment(data-list='{"name":"payment","links":["繳費1","繳費2"]}')
 						.list-icon
 						span.label 繳費功能
@@ -38,53 +54,21 @@ html(lang='zh-TW')
 						.list-icon
 						span.label 醫療衛生
 				.col-3
-					.list-item.law(data-list='{"name":"law","links":["法條1","法條2"]}')
+					.list-item.citizen(data-list='{"name":"citizen","links":["公民1","公民2"]}')
 						.list-icon
-						span.label 法條規範
+						span.label 公民參與
 				.col-3
 					.list-item.local(data-list='{"name":"local","links":["地方1","地方2"]}')
 						.list-icon
 						span.label 地方政府
 				.col-3
-					.list-item.historic(data-list='{"name":"historic","links":["歷史1","歷史2"]}')
+					.list-item.law(data-list='{"name":"law","links":["法條1","法條2"]}')
 						.list-icon
-						span.label 歷史古蹟
-				.col-3
-					.list-item.tourism(data-list='{"name":"tourism","links":["觀光1","觀光2"]}')
-						.list-icon
-						span.label 觀光旅遊
-				.col-3
-					.list-item.post(data-list='{"name":"post","links":["郵政1","郵政2"]}')
-						.list-icon
-						span.label 郵政服務
-				.col-3
-					.list-item.event(data-list='{"name":"event","links":["藝文1","藝文2"]}')
-						.list-icon
-						span.label 藝文活動
-				.col-3
-					.list-item.citizen(data-list='{"name":"citizen","links":["公民1","公民2"]}')
-						.list-icon
-						span.label 公民參與
-				.col-3
-					.list-item.welfare(data-list='{"name":"welfare","links":["老人1","老人2"]}')
-						.list-icon
-						span.label 老人福利
-				.col-3
-					.list-item.central(data-list='{"name":"central","links":["中央1","中央2"]}')
-						.list-icon
-						span.label 中央機構
+						span.label 法條規範
 				.col-3
 					.list-item.tnecg(data-list='{"name":"tnecg","links":["戶政1","戶政2"]}')
 						.list-icon
 						span.label 戶政機關
-				.col-3
-					.list-item.job(data-list='{"name":"job","links":["就業1","就業2"]}')
-						.list-icon
-						span.label 就業輔導
-				.col-3
-					.list-item.evironment(data-list='{"name":"evironment","links":["環保1","環保2"]}')
-						.list-icon
-						span.label 環保議題
 	section#footer
 		.container
 			.col
