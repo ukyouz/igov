@@ -24,67 +24,7 @@
   </section>
   <section id="service">
     <div class="container">
-      <div anchor="" class="list">
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;transport&quot;,&quot;links&quot;:[&quot;交通1&quot;,&quot;交通2&quot;]}" class="list-item transport">
-            <div class="list-icon"></div><span class="label">交通資訊</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;tax&quot;,&quot;links&quot;:[&quot;稅務1&quot;,&quot;稅務2&quot;]}" class="list-item tax">
-            <div class="list-icon"></div><span class="label">稅務服務</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;post&quot;,&quot;links&quot;:[&quot;郵政1&quot;,&quot;郵政2&quot;]}" class="list-item post">
-            <div class="list-icon"></div><span class="label">郵政服務</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;tourism&quot;,&quot;links&quot;:[&quot;觀光1&quot;,&quot;觀光2&quot;]}" class="list-item tourism">
-            <div class="list-icon"></div><span class="label">觀光旅遊</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;event&quot;,&quot;links&quot;:[&quot;藝文1&quot;,&quot;藝文2&quot;]}" class="list-item event">
-            <div class="list-icon"></div><span class="label">藝文活動</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;job&quot;,&quot;links&quot;:[&quot;就業1&quot;,&quot;就業2&quot;]}" class="list-item job">
-            <div class="list-icon"></div><span class="label">就業輔導</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;payment&quot;,&quot;links&quot;:[&quot;繳費1&quot;,&quot;繳費2&quot;]}" class="list-item payment">
-            <div class="list-icon"></div><span class="label">繳費功能</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;medical&quot;,&quot;links&quot;:[&quot;醫療1&quot;,&quot;醫療2&quot;]}" class="list-item medical">
-            <div class="list-icon"></div><span class="label">醫療衛生</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;citizen&quot;,&quot;links&quot;:[&quot;公民1&quot;,&quot;公民2&quot;]}" class="list-item citizen">
-            <div class="list-icon"></div><span class="label">公民參與</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;local&quot;,&quot;links&quot;:[&quot;地方1&quot;,&quot;地方2&quot;]}" class="list-item local">
-            <div class="list-icon"></div><span class="label">地方政府</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;law&quot;,&quot;links&quot;:[&quot;法條1&quot;,&quot;法條2&quot;]}" class="list-item law">
-            <div class="list-icon"></div><span class="label">法條規範</span>
-          </div>
-        </div>
-        <div class="col-3">
-          <div data-list="{&quot;name&quot;:&quot;tnecg&quot;,&quot;links&quot;:[&quot;戶政1&quot;,&quot;戶政2&quot;]}" class="list-item tnecg">
-            <div class="list-icon"></div><span class="label">戶政機關</span>
-          </div>
-        </div>
+      <div class="list">
       </div>
     </div>
   </section>
@@ -103,22 +43,172 @@
       </div>
     </div>
   </section>
-  <script id="template" type="text/x-jquery-tmpl">
+  <script id="tmplItem" type="text/x-jquery-tmpl">
+    <div class="col-3">
+    <div class="list-item ${name}" data-list="${dataList}">
+    	<div class="list-icon"></div><span class="label">${label}</span>
+    </div>
+    </div>
+  </script>
+  <script id="tmplFolder" type="text/x-jquery-tmpl">
     <div class="col-12">
     <div class="list-item ${name}">
-    	<ul>
-    		{{each links}}<li>${$value}</li>{{/each}}
-    	</ul>
+    {{each links}}<span class="sub-item"><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
     </div>
     </div>
   </script>
   <script type="text/javascript">
+    $boxes = [
+    	{
+    		label: "交通資訊",
+    		name: "transport",
+    	},
+    	{
+    		label: "稅務服務",
+    		name: "tax",
+    	},
+    	{
+    		label: "郵政服務",
+    		name: "post",
+    	},
+    	{
+    		label: "觀光旅遊",
+    		name: "tourism",
+    	},
+    	{
+    		label: "藝文活動",
+    		name: "event",
+    	},
+    	{
+    		label: "就業輔導",
+    		name: "job",
+    	},
+    	{
+    		label: "繳費功能",
+    		name: "payment",
+    	},
+    	{
+    		label: "醫療衛生",
+    		name: "medical",
+    	},
+    	{
+    		label: "公民參與",
+    		name: "citizen",
+    	},
+    	{
+    		label: "地方政府",
+    		name: "local",
+    	},
+    	{
+    		label: "法條規範",
+    		name: "law",
+    	},
+    	{
+    		label: "戶政機關",
+    		name: "tnecg",
+    	},
+    ];
+    $Links = {
+    	transport : {
+    		links: [
+    			{title: "交通1", href:""},
+    			{title: "交通2", href:""},
+    		]
+    	},
+    	medical: {
+    		links: [
+    			{title: "聯合醫院各院區網路掛號", href: "http://webreg.tpech.gov.tw/RegOnline1.aspx"},
+    			{title: "醫療服務查詢", href: "http://health.gov.taipei/Default.aspx?tabid=669"},
+    			{title: "特殊照護服務", href: "http://health.gov.taipei/Default.aspx?tabid=670"},
+    			{title: "北市12區健康服務中心(原衛生所)", href: "http://www.health.gov.tw/health_center/"},
+    
+    		]
+    	},
+    	tax: {
+    		links: [
+    			{title: "綜所稅結算申報", href: "http://tax.nat.gov.tw/info_IRX_download.html?id=1#"},
+    			{title: "營所稅結(決)算", href: "http://tax.nat.gov.tw/info.html?id=4"},
+    			{title: "房地合一申報", href: "http://tax.nat.gov.tw/info.html?id=17"},
+    			{title: "外僑綜所稅", href: "http://tax.nat.gov.tw/info.html?id=8"},
+    		]
+    	},
+    	tourism: {
+    		links: [
+    			{title: "觀光局最新資訊", href: "http://www.travel.taipei/frontsite/tw/cms/cmsAction.do?method=goCMSList&menuId=2010101&logMenuId=20151"},
+    			{title: "旅館查詢", href: "http://www.travel.taipei/frontsite/tw/store/hotelAction.do?method=findAll&menuId=2010202"},
+    			{title: "景點搜尋", href: "http://www.travel.taipei/tw/scene/"},
+    		]
+    	},
+    	event: {
+    		links: [
+    			{title: "訂票入口", href: "http://www.travel.taipei/tw/scene/"},
+    			{title: "藝文資訊搜尋", href: "http://cultureexpress.taipei"},
+    		]
+    	},
+    	payment: {
+    		links: [
+    			{title: "停車繳費", href: "http://parkingfee.pma.gov.tw"},
+    			{title: "自來水繳費", href: "http://www.water.gov.tw/03online/counter0201_view.asp"},
+    			{title: "線上電費繳交", href: "http://www.taipower.com.tw/content/q_service/q_service01_6_2.aspx?NType=6"},
+    		]
+    	},
+    	post: {
+    		links: [
+    			{title: "郵件查詢", href: "http://postserv.post.gov.tw/webpost/CSController?cmd=POS4001_1&_SYS_ID=D&_MENU_ID=189&_ACTIVE_ID=190"},
+    			{title: "儲匯業務", href: "http://www.post.gov.tw/post/internet/B_saving/"},
+    			{title: "網路郵局", href: "https://ipost.post.gov.tw/web/CSController"},
+    		]
+    	},
+    	local: {
+    		links: [
+    			{title: "市政府最新消息", href: "http://www.gov.taipei/lp.asp?ctNode=5156&CtUnit=10399&BaseDSD=56&mp=100001"},
+    			{title: "市政信箱", href: "https://contact.taipei.gov.tw/cclm/clm/aspx/CLMG00000.aspx"},
+    			{title: "本市預決算", href: "http://www.gov.taipei/ct.asp?xItem=42588&CtNode=5318&mp=100001"},
+    		]
+    	},
+    	citizen: {
+    		links: [
+    			{title: "i-Voting", href: "https://ivoting.taipei"},
+    			{title: "市政府資料開放平台", href: "http://data.taipei"},
+    		]
+    	},
+    	tnecg: {
+    		links: [
+    			{title: "網路預約戶政登記", href: "https://www.ris.gov.tw/webapply/671"},
+    			{title: "戶政服務列表", href: "http://www.e-services.taipei.gov.tw/hypage.cgi?HYPAGE=index_01.htm&clsid0=1&clsid1=7&clsid2=403&cond=all&total_srv=72#showname_place"},
+    		]
+    	},
+    	transport: {
+    		links: [
+    			{title: "捷運整合資訊服務", href: "http://www.metro.taipei/ct.asp?xItem=78479152&CtNode=70089&mp=122035"},
+    			{title: "台灣高鐵網路訂票服務", href: "https://irs.thsrc.com.tw/IMINT?locale=tw"},
+    			{title: "台鐵網路訂票系統", href: "http://railway.hinet.net"},
+    		]
+    	},
+    	law: {
+    		links: [
+    			{title: "全國法規資料庫", href: "http://law.moj.gov.tw"},
+    			{title: "e化免費法律諮詢網", href: "http://law.twdetect.org.tw/index.php"},
+    		]
+    	},
+    	job: {
+    		links: [
+    			{title: "北市就業服務處", href: "http://eso.gov.taipei/ct.asp?xItem=69075&CtNode=19058&mp=116041"},
+    			{title: "勞資信箱", href: "https://web.bola.taipei/mailbox/index.html"},
+    		]
+    	},
+    };
+    $.each($boxes, function(i, value){
+    	$boxes[i].dataList = JSON.stringify($Links[$boxes[i].name]);
+    });
+    $('#tmplItem').tmpl($boxes).appendTo( $('#service .list') );
     $('#service .list-item').click(function(){
+    	$_this = $(this);
     	$('.list .list-item').removeClass('active');
-    	$data = $(this).attr('data-list');
+    	$data = $_this.attr('data-list');
     	$data = $.parseJSON($data);
-    	$n = $(this).parent('.col-3').prevAll('.col-3').length;
-    	$a = $n-$n%4+4-1;
+    	$n = $_this.parent('.col-3').prevAll('.col-3').length;
+    	$a = $n+1;
     	//- console.log($n-$n%4+4);
     	if($n == $('.list').attr('data-open')) {
     		$('.list .col-12').slideUp(function(){$(this).remove()});
@@ -126,13 +216,25 @@
     		return;
     	}
     	
-    	$(this).addClass('active');
+    	$cols = $('.list .col-3');
+    	$_this.addClass('active');
+    	$_this.parent('.col-3').nextAll('.col-3').each(function(){
+    		//- console.log($($cols[$a-1]));
+    		//- $thisLeft = $(this).offset().left;
+    		if($(this).offset().left <= $($cols[$a-1]).offset().left ){
+    			return false;
+    		}
+    		$a++;
+    		//- }
+    	});
+    	//- console.log($a);
+    	$a--;
     	if($a == $('.list').attr('anchor')) {
     		$('.list .col-12').remove();
-    		$('#template').tmpl($data).insertAfter( $('.list .col-3:eq('+$a+')') );
+    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) );
     	} else {
     		$('.list .col-12').slideUp(function(){$(this).remove()});
-    		$('#template').tmpl($data).insertAfter( $('.list .col-3:eq('+$a+')') ).hide().slideDown();
+    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).hide().slideDown();
     	}
     	$('.list').attr({'anchor': $a, 'data-open': $n});
     	//- console.log(	$('.list').children(':eq('+$n+')') );

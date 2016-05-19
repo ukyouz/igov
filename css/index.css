@@ -86,6 +86,7 @@ code {
 	padding: 1em;
 	border: 1px solid #33CC99;
 	color: #333;
+	text-align: center;
 	border-radius: 24px;
 	background: rgba(255,255,255,1);
 	background: -moz-linear-gradient(top, #fff 0%, #efefef 100%);
@@ -205,6 +206,9 @@ code {
 #service .col-3 .law:hover, #service .col-3 .law.active, #service .col-12 .law a:hover {color: #906C8C; border-color: #906C8C;}
 #service .col-3 .tnecg:hover, #service .col-3 .tnecg.active, #service .col-12 .tnecg a:hover {color: #C9A063; border-color: #C9A063;}
 
+#service .list-item .sub-item {
+	padding: 0.5em 1em;
+}
 
 /*************************************
  * footer
