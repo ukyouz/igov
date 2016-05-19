@@ -208,7 +208,10 @@ code {
 
 #service .list-item .sub-item {
 	padding: 0.5em 1em;
+	white-space: nowrap;
+	display: inline-block;
 }
+
 
 /*************************************
  * footer
