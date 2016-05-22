@@ -81,7 +81,7 @@ $boxes = [
 			},
 			event: {
 				links: [
-					{title: "訂票入口", href: "http://www.travel.taipei/tw/scene/"},
+					{title: "藝文訂票入口", href: "http://www.travel.taipei/frontsite/tw/cms/cmsAction.do?method=goCMSDetail&listOne=true&contentId=3255&menuId=20121"},
 					{title: "藝文資訊搜尋", href: "http://cultureexpress.taipei"},
 				]
 			},
@@ -128,7 +128,7 @@ $boxes = [
 			law: {
 				links: [
 					{title: "全國法規資料庫", href: "http://law.moj.gov.tw"},
-					{title: "e化免費法律諮詢網", href: "http://law.twdetect.org.tw/index.php"},
+					{title: "e化免費法律諮詢網", href: "http://law.twdetect.org.tw/contact.php"},
 				]
 			},
 			job: {
