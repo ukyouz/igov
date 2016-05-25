@@ -18,8 +18,8 @@ section {
 .container {
 	max-width: 1000px;
 	margin: auto;
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
 	overflow: hidden;
 }
 .form-control .form-input {
@@ -54,11 +54,60 @@ code {
 #header .row > div {
 	display: inline-block;
 }
+#header .row:last-child {
+	margin-bottom: 0;
+}
 #header .search-bar {
 	width: 30em;
+	margin-right: 0;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+}
+@media (max-width: 560px) {
+	#header .container {
+		padding-top: 2em;
+	}
+	.brand {
+		width: 270px;
+	}
+	#header .search-bar {
+		width: auto;
+	}
+}
+#header .search .button {
+	display: inline-block;
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 3px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	background: #4285f4;
 }
 
+/* autocomplete */
 
+.ui-autocomplete {
+	max-height: 216px;
+	border-color: #ddd;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+}
+.ui-autocomplete .ui-menu-item {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+	border-color: transparent;
+	background: #eee;
+}
+.ui-autocomplete .ui-menu-item span {
+	display: block;
+}
+.ui-autocomplete .ui-menu-item .category {
+	color: gray;
+	font-size: 0.85em;
+}
 
 /*************************************
  * service

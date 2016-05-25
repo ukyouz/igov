@@ -5,9 +5,11 @@ html(lang='zh-TW')
 		title igov 安心政府
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='stylesheet', type='text/css', href='css/reset.css')
+		link(rel='stylesheet', type='text/css', href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css')
 		link(rel='stylesheet', type='text/css', href='css/index.css')
 		script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
 		script(type='text/javascript', src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js')
+		script(type='text/javascript', src='https://code.jquery.com/ui/1.11.4/jquery-ui.js')
 		script(type='text/javascript', src='js/service-data.js')
 	body
 	section#header
@@ -16,9 +18,9 @@ html(lang='zh-TW')
 				div
 					img.brand(src='image/igov-logo.svg')
 			.row
-				.form-control
-					input.form-input.search-bar(type='text')
-				span 搜尋
+				.form-control.search
+					input.form-input.search-bar#search(type='text')
+					span.button 搜尋
 	section#service
 		.container
 			.list
@@ -55,6 +57,45 @@ html(lang='zh-TW')
 		{{each links}}<span class="sub-item"><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
 		</div>
 		</div>
+	script(type='text/javascript').
+		var data = [];
+		$.each($boxes, function(i, val){
+			$name = $boxes[i].name;
+			//- for(var link in $Links[$name].links){
+				
+			//- };
+			$.each($Links[$name].links, function(index, value){
+				data.push({
+					label: value.title,
+					value: value.href,
+					category: $boxes[i].label,
+				});
+			});
+		});
+		//- console.log(data);
+		$('#search').autocomplete({
+			minLength: 0,
+			source: data,
+			focus: function(event, ui) {
+				//- console.log(ui.item.eng)
+				$( "#search" ).val( ui.item.label );
+				return false;
+			},
+			select: function(event, ui) {
+				//- console.log(ui.item);
+				window.open(ui.item.value, '_blank');
+				$( "#search" ).val( ui.item.label );
+				//- $( "#search-id" ).val( ui.item.value );
+				//- $( "#search-description" ).html( ui.item.desc );
+				//- $( "#search-icon" ).attr( "src", "images/" + ui.item.icon );
+				return false;
+			}
+		}).autocomplete( "instance" )._renderItem = function(ul, item) {
+			return $("<li>")
+				.append( "<span class='category'>" + item.category + "</span>")
+				.append( "<span class='label'>" + item.label + "</span>" )
+				.appendTo(ul);
+		};
 	script(type='text/javascript').
 		$.each($boxes, function(i, value){
 			$boxes[i].dataList = JSON.stringify($Links[$boxes[i].name]);
