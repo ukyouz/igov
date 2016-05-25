@@ -88,6 +88,7 @@
     		//- console.log(ui.item);
     		$("#search").val(ui.item.label);
     		$("#searchButton").attr('href', ui.item.value);
+    		alert('dd');
     		return false;
     	}
     }).autocomplete( "instance" )._renderItem = function(ul, item) {
