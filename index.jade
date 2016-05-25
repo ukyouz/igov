@@ -91,10 +91,10 @@ html(lang='zh-TW')
 				return false;
 			}
 		}).autocomplete( "instance" )._renderItem = function(ul, item) {
-			return $("<li>")
+			$a = $("<a href='"+item.value+"' target='_blank'></a>")
 				.append( "<span class='category'>" + item.category + "</span>")
-				.append( "<a class='label' href='"+ item.value +"' target='_blank'>" + item.label + "</a>" )
-				.appendTo(ul);
+				.append( "<span class='label'>" + item.label + "</span>" );
+			return $("<li>").append($a).appendTo(ul);
 		};
 	script(type='text/javascript').
 		$.each($boxes, function(i, value){

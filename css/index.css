@@ -113,7 +113,7 @@ code {
 	color: gray;
 	font-size: 0.85em;
 }
-.ui-autocomplete .ui-menu-item .label {
+.ui-autocomplete .ui-menu-item a {
 	text-decoration: none;
 }
 

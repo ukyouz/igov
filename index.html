@@ -94,10 +94,10 @@
     		return false;
     	}
     }).autocomplete( "instance" )._renderItem = function(ul, item) {
-    	return $("<li>")
+    	$a = $("<a href='"+item.value+"' target='_blank'></a>")
     		.append( "<span class='category'>" + item.category + "</span>")
-    		.append( "<span class='label'>" + item.label + "</span>" )
-    		.appendTo(ul);
+    		.append( "<span class='label'>" + item.label + "</span>" );
+    	return $("<li>").append($a).appendTo(ul);
     };
   </script>
   <script type="text/javascript">
