@@ -18,8 +18,8 @@ section {
 .container {
 	max-width: 1000px;
 	margin: auto;
-	padding-top: 2.5em;
-	padding-bottom: 2.5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 	overflow: hidden;
 }
 .form-control .form-input {
@@ -55,7 +55,7 @@ code {
 	display: inline-block;
 }
 #header .row:last-child {
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
 }
 #header .search-bar {
 	width: 30em;
@@ -64,11 +64,15 @@ code {
 	border-top-right-radius: 0;
 }
 @media (max-width: 560px) {
+	.container {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+	}
 	#header .container {
 		padding-top: 2em;
 	}
 	.brand {
-		width: 270px;
+		width: 240px;
 	}
 	#header .search-bar {
 		width: auto;
@@ -113,10 +117,10 @@ code {
  * service
  *************************************/
 
-#service .container {
+/*#service .container {
 	padding-top: 3em;
 	padding-bottom: 3em;
-}
+}*/
 #service .list {
 	max-width: 38em;
 	text-align: center;
