@@ -20,7 +20,7 @@ html(lang='zh-TW')
 			.row
 				.form-control.search
 					input.form-input.search-bar#search(type='text')
-					span.button 搜尋
+					a(target='_blank').button#searchButton 搜尋
 	section#service
 		.container
 			.list
@@ -83,11 +83,9 @@ html(lang='zh-TW')
 			},
 			select: function(event, ui) {
 				//- console.log(ui.item);
-				window.open(ui.item.value, '_blank');
-				$( "#search" ).val( ui.item.label );
-				//- $( "#search-id" ).val( ui.item.value );
-				//- $( "#search-description" ).html( ui.item.desc );
-				//- $( "#search-icon" ).attr( "src", "images/" + ui.item.icon );
+				//- window.open(ui.item.value, '_blank');
+				$("#search").val(ui.item.label);
+				$("#searchButton").attr('href', ui.item.value);
 				return false;
 			}
 		}).autocomplete( "instance" )._renderItem = function(ul, item) {
@@ -119,7 +117,6 @@ html(lang='zh-TW')
 			$_this.addClass('active');
 			$_this.parent('.col-3').nextAll('.col-3').each(function(){
 				//- console.log($($cols[$a-1]));
-				//- $thisLeft = $(this).offset().left;
 				if($(this).offset().left <= $($cols[$a-1]).offset().left ){
 					return false;
 				}

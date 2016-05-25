@@ -27,7 +27,6 @@ section {
 	border-radius: 4px;
 	font-size: 1em;
 	line-height: 1;
-	height: 38px;
 	padding: 9px 12px;
 }
 code {
@@ -87,6 +86,7 @@ code {
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
 	background: #4285f4;
+	text-decoration: none;
 }
 
 /* autocomplete */

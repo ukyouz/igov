@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <div class="form-control search">
-          <input id="search" type="text" class="form-input search-bar"><span class="button">搜尋</span>
+          <input id="search" type="text" class="form-input search-bar"><a target="_blank" id="searchButton" class="button">搜尋</a>
         </div>
       </div>
     </div>
@@ -86,11 +86,9 @@
     	},
     	select: function(event, ui) {
     		//- console.log(ui.item);
-    		window.open(ui.item.value, '_blank');
-    		$( "#search" ).val( ui.item.label );
-    		//- $( "#search-id" ).val( ui.item.value );
-    		//- $( "#search-description" ).html( ui.item.desc );
-    		//- $( "#search-icon" ).attr( "src", "images/" + ui.item.icon );
+    		//- window.open(ui.item.value, '_blank');
+    		$("#search").val(ui.item.label);
+    		$("#searchButton").attr('href', ui.item.value);
     		return false;
     	}
     }).autocomplete( "instance" )._renderItem = function(ul, item) {
@@ -123,7 +121,6 @@
     	$_this.addClass('active');
     	$_this.parent('.col-3').nextAll('.col-3').each(function(){
     		//- console.log($($cols[$a-1]));
-    		//- $thisLeft = $(this).offset().left;
     		if($(this).offset().left <= $($cols[$a-1]).offset().left ){
     			return false;
     		}
