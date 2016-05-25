@@ -82,13 +82,13 @@
     	focus: function(event, ui) {
     		//- console.log(ui.item.eng)
     		$( "#search" ).val( ui.item.label );
+    		$("#searchButton").attr('href', ui.item.value);
     		return false;
     	},
     	select: function(event, ui) {
     		//- console.log(ui.item);
     		$("#search").val(ui.item.label);
     		$("#searchButton").attr('href', ui.item.value);
-    		alert('dd');
     		return false;
     	}
     }).autocomplete( "instance" )._renderItem = function(ul, item) {
