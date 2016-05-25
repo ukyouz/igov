@@ -93,7 +93,7 @@ html(lang='zh-TW')
 		}).autocomplete( "instance" )._renderItem = function(ul, item) {
 			return $("<li>")
 				.append( "<span class='category'>" + item.category + "</span>")
-				.append( "<span class='label'>" + item.label + "</span>" )
+				.append( "<a class='label' href='"+ item.value +"' target='_blank'>" + item.label + "</a>" )
 				.appendTo(ul);
 		};
 	script(type='text/javascript').

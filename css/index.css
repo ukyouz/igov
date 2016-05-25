@@ -113,6 +113,9 @@ code {
 	color: gray;
 	font-size: 0.85em;
 }
+.ui-autocomplete .ui-menu-item .label {
+	text-decoration: none;
+}
 
 /*************************************
  * service
