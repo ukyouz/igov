@@ -19,7 +19,8 @@ html(lang='zh-TW')
 					img.brand(src='image/igov-logo.svg')
 			.row
 				.form-control.search
-					input.form-input.search-bar#search(type='text')
+					.form#form
+						input.form-input.search-bar#search(type='text')
 					a(target='_blank').button#searchButton 搜尋
 	section#service
 		.container
@@ -78,7 +79,8 @@ html(lang='zh-TW')
 			source: data,
 			focus: function(event, ui) {
 				//- console.log(ui.item.eng)
-				$( "#search" ).val( ui.item.label );
+				$("#search").val( ui.item.label );
+				$("#searchButton").attr('href', ui.item.value);
 				return false;
 			},
 			select: function(event, ui) {

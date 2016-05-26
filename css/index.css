@@ -23,12 +23,13 @@ section {
 	overflow: hidden;
 }
 .form-control .form-input {
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-shadow: none;
 	font-size: 1em;
-	line-height: 16px;
-	padding: 9px 12px;
+	line-height: 24px;
+	border: none;
+	padding: 5px 9px 0;
+	margin: 0px;
+	height: 36px;
+	width: 100%;
 }
 code {
 	display: none;
@@ -58,9 +59,13 @@ code {
 #header .row:last-child {
 	margin-bottom: 0.5em;
 }
-#header .search-bar {
-	width: 30em;
-	margin-right: 0;
+#header .form {
+	height: 38px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 0;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
 }
@@ -82,8 +87,11 @@ code {
 #header .search .button {
 	display: inline-block;
 	color: #fff;
-	padding: 8px 12px;
+	padding: 0px 12px;
+	height: 38px;
+	line-height: 38px;
 	border-radius: 3px;
+	vertical-align: bottom;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
 	background: #4285f4;

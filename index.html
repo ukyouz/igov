@@ -20,7 +20,9 @@
       </div>
       <div class="row">
         <div class="form-control search">
-          <input id="search" type="text" class="form-input search-bar"><a target="_blank" id="searchButton" class="button">搜尋</a>
+          <div id="form" class="form">
+            <input id="search" type="text" class="form-input search-bar">
+          </div><a target="_blank" id="searchButton" class="button">搜尋</a>
         </div>
       </div>
     </div>
@@ -81,7 +83,7 @@
     	source: data,
     	focus: function(event, ui) {
     		//- console.log(ui.item.eng)
-    		$( "#search" ).val( ui.item.label );
+    		$("#search").val( ui.item.label );
     		$("#searchButton").attr('href', ui.item.value);
     		return false;
     	},
