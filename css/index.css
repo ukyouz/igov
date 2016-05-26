@@ -246,38 +246,80 @@ code {
 #service .col-3 .list-item.active .list-icon {
 	background-image: url('../image/services-color.svg');
 }
-#service .list-item.transport .list-icon {background-position: 0 0;}
-#service .list-item.tax .list-icon {background-position: 33.333% 0;}
-#service .list-item.post .list-icon {background-position: 66.667% 0;}
-#service .list-item.tourism .list-icon {background-position: 100% 0;}
-#service .list-item.event .list-icon {background-position: 0% 50%;}
-#service .list-item.job .list-icon {background-position: 33.333% 50%;}
-#service .list-item.payment .list-icon {background-position: 66.667% 50%;}
-#service .list-item.medical .list-icon {background-position: 100% 50%;}
-#service .list-item.citizen .list-icon {background-position: 0 100%;}
-#service .list-item.local .list-icon {background-position: 33.333% 100%;}
-#service .list-item.law .list-icon {background-position: 66.667% 100%;}
-#service .list-item.tnecg .list-icon {background-position: 100% 100%;}
-
-#service .col-3 .transport:hover, #service .col-3 .transport.active, #service .col-12 .transport a:hover {color: #0095A0; border-color: #0095A0;}
-#service .col-3 .tax:hover, #service .col-3 .tax.active, #service .col-12 .tax a:hover {color: #F7B52C; border-color: #F7B52C;}
-#service .col-3 .post:hover, #service .col-3 .post.active, #service .col-12 .post a:hover {color: #13AE67; border-color: #13AE67;}
-#service .col-3 .tourism:hover, #service .col-3 .tourism.active, #service .col-12 .tourism a:hover {color: #5BADC9; border-color: #5BADC9;}
-#service .col-3 .event:hover, #service .col-3 .event.active, #service .col-12 .event a:hover {color: #B367B7; border-color: #B367B7;}
-#service .col-3 .job:hover, #service .col-3 .job.active, #service .col-12 .job a:hover {color: #7779B8; border-color: #7779B8;}
-#service .col-3 .payment:hover, #service .col-3 .payment.active, #service .col-12 .payment a:hover {color: #A5B548; border-color: #A5B548;}
-#service .col-3 .medical:hover, #service .col-3 .medical.active, #service .col-12 .medical a:hover {color: #F27968; border-color: #F27968;}
-#service .col-3 .citizen:hover, #service .col-3 .citizen.active, #service .col-12 .citizen a:hover {color: #D86464; border-color: #D86464;}
-#service .col-3 .local:hover, #service .col-3 .local.active, #service .col-12 .local a:hover {color: #727171; border-color: #727171;}
-#service .col-3 .law:hover, #service .col-3 .law.active, #service .col-12 .law a:hover {color: #906C8C; border-color: #906C8C;}
-#service .col-3 .tnecg:hover, #service .col-3 .tnecg.active, #service .col-12 .tnecg a:hover {color: #C9A063; border-color: #C9A063;}
 
 #service .list-item .sub-item {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	margin: 0.5em .5em;
 	padding: 0.5em 1em;
+	padding-left: 10px;
 	white-space: nowrap;
 	display: inline-block;
+	overflow: hidden;
+}
+#service .list-item .sub-item .icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background: url('../image/services-button.svg') no-repeat;
+	background-size: 400%;
+	margin: -9px 0;
+	margin-right: 8px;
+}
+#service .list-item .sub-item a {
+	text-decoration: none;
 }
 
+#service .list-item.transport .list-icon, #service .list-item.transport .sub-item .icon {background-position: 0 0;}
+#service .list-item.tax .list-icon, #service .list-item.tax .sub-item .icon {background-position: 33.333% 0;}
+#service .list-item.post .list-icon, #service .list-item.post .sub-item .icon {background-position: 66.667% 0;}
+#service .list-item.tourism .list-icon, #service .list-item.tourism .sub-item .icon {background-position: 100% 0;}
+#service .list-item.event .list-icon, #service .list-item.event .sub-item .icon {background-position: 0% 50%;}
+#service .list-item.job .list-icon, #service .list-item.job .sub-item .icon {background-position: 33.333% 50%;}
+#service .list-item.payment .list-icon, #service .list-item.payment .sub-item .icon {background-position: 66.667% 50%;}
+#service .list-item.medical .list-icon, #service .list-item.medical .sub-item .icon {background-position: 100% 50%;}
+#service .list-item.citizen .list-icon, #service .list-item.citizen .sub-item .icon {background-position: 0 100%;}
+#service .list-item.local .list-icon, #service .list-item.local .sub-item .icon {background-position: 33.333% 100%;}
+#service .list-item.law .list-icon, #service .list-item.law .sub-item .icon {background-position: 66.667% 100%;}
+#service .list-item.tnecg .list-icon, #service .list-item.tnecg .sub-item .icon {background-position: 100% 100%;}
+
+#service .list-item.transport .sub-item,
+#service .col-3 .transport:hover, #service .col-3 .transport.active, #service .col-12 .transport a:hover {color: #0095A0; border-color: #0095A0;}
+#service .list-item.tax .sub-item,
+#service .col-3 .tax:hover, #service .col-3 .tax.active, #service .col-12 .tax a:hover {color: #F7B52C; border-color: #F7B52C;}
+#service .list-item.post .sub-item,
+#service .col-3 .post:hover, #service .col-3 .post.active, #service .col-12 .post a:hover {color: #13AE67; border-color: #13AE67;}
+#service .list-item.tourism .sub-item,
+#service .col-3 .tourism:hover, #service .col-3 .tourism.active, #service .col-12 .tourism a:hover {color: #5BADC9; border-color: #5BADC9;}
+#service .list-item.event .sub-item,
+#service .col-3 .event:hover, #service .col-3 .event.active, #service .col-12 .event a:hover {color: #B367B7; border-color: #B367B7;}
+#service .list-item.job .sub-item,
+#service .col-3 .job:hover, #service .col-3 .job.active, #service .col-12 .job a:hover {color: #7779B8; border-color: #7779B8;}
+#service .list-item.payment .sub-item,
+#service .col-3 .payment:hover, #service .col-3 .payment.active, #service .col-12 .payment a:hover {color: #A5B548; border-color: #A5B548;}
+#service .list-item.medical .sub-item,
+#service .col-3 .medical:hover, #service .col-3 .medical.active, #service .col-12 .medical a:hover {color: #F27968; border-color: #F27968;}
+#service .list-item.citizen .sub-item,
+#service .col-3 .citizen:hover, #service .col-3 .citizen.active, #service .col-12 .citizen a:hover {color: #D86464; border-color: #D86464;}
+#service .list-item.local .sub-item,
+#service .col-3 .local:hover, #service .col-3 .local.active, #service .col-12 .local a:hover {color: #727171; border-color: #727171;}
+#service .list-item.law .sub-item,
+#service .col-3 .law:hover, #service .col-3 .law.active, #service .col-12 .law a:hover {color: #906C8C; border-color: #906C8C;}
+#service .list-item.tnecg .sub-item,
+#service .col-3 .tnecg:hover, #service .col-3 .tnecg.active, #service .col-12 .tnecg a:hover {color: #C9A063; border-color: #C9A063;}
+
+#service .list-item.transport .sub-item,
+#service .list-item.tax .sub-item,
+#service .list-item.post .sub-item,
+#service .list-item.tourism .sub-item,
+#service .list-item.event .sub-item,
+#service .list-item.job .sub-item,
+#service .list-item.payment .sub-item,
+#service .list-item.medical .sub-item,
+#service .list-item.citizen .sub-item,
+#service .list-item.local .sub-item,
+#service .list-item.law .sub-item,
+#service .list-item.tnecg .sub-item {color: #000;}
 
 /*************************************
  * footer

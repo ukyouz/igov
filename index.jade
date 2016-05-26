@@ -45,23 +45,21 @@ html(lang='zh-TW')
 					a(href='https://www.facebook.com/iGov.service/', target='_blank') 安心政府i-Gov
 	script#tmplItem(type="text/x-jquery-tmpl").
 		<div class="col-3">
-		<div class="list-item ${name}" data-list="${dataList}">
+		<div class="list-item ${name}" data-list="${dataList}" name="${name}">
 			<div class="list-icon"></div><span class="label">${label}</span>
 		</div>
 		</div>
 	script#tmplFolder(type="text/x-jquery-tmpl").
 		<div class="col-12">
 		<div class="list-item ${name}">
-		{{each links}}<span class="sub-item"><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
+		{{each links}}<span class="sub-item"><span class="icon"></span><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
 		</div>
 		</div>
 	script(type='text/javascript').
+		// for autocomplete
 		var data = [];
 		$.each($boxes, function(i, val){
 			$name = $boxes[i].name;
-			//- for(var link in $Links[$name].links){
-				
-			//- };
 			$.each($Links[$name].links, function(index, value){
 				data.push({
 					label: value.title,
@@ -70,7 +68,6 @@ html(lang='zh-TW')
 				});
 			});
 		});
-		//- console.log(data);
 		$('#search').autocomplete({
 			minLength: 0,
 			source: data,
@@ -93,6 +90,7 @@ html(lang='zh-TW')
 			return $("<li>").append($a).appendTo(ul);
 		};
 	script(type='text/javascript').
+		// for sub-items
 		$.each($boxes, function(i, value){
 			$boxes[i].dataList = JSON.stringify($Links[$boxes[i].name]);
 		});
@@ -102,6 +100,7 @@ html(lang='zh-TW')
 			$('.list .list-item').removeClass('active');
 			$data = $_this.attr('data-list');
 			$data = $.parseJSON($data);
+			$data.name = $_this.attr('name');
 			$n = $_this.parent('.col-3').prevAll('.col-3').length;
 			$a = $n+1;
 			//- console.log($n-$n%4+4);
@@ -123,6 +122,7 @@ html(lang='zh-TW')
 			});
 			//- console.log($a);
 			$a--;
+			console.log($data);
 			if($a == $('.list').attr('anchor')) {
 				$('.list .col-12').remove();
 				$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) );
