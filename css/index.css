@@ -22,11 +22,10 @@ section {
 	padding-bottom: 3em;
 	overflow: hidden;
 }
-.form-control .form-input,
-.form-control .form-input:focus,
-.form-control .form-input:active {
+.form-control .form-input {
 	border: 1px solid #ccc;
 	border-radius: 4px;
+	box-shadow: none;
 	font-size: 1em;
 	line-height: 16px;
 	padding: 9px 12px;
