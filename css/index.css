@@ -61,6 +61,7 @@ code {
 }
 #header .form {
 	height: 38px;
+	width: 30em;
 	overflow: hidden;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -80,7 +81,7 @@ code {
 	.brand {
 		width: 240px;
 	}
-	#header .search-bar {
+	#header .form {
 		width: auto;
 	}
 }
