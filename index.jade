@@ -66,7 +66,7 @@ html(lang='zh-TW')
 				div
 					img.brand(src='image/heart.svg')
 			.row
-				h1.igov I-Gov用心，讓民眾順心與安心
+				h1.igov igov用心，讓民眾順心與安心
 	section#footer
 		.container
 			.col
@@ -206,7 +206,8 @@ html(lang='zh-TW')
 				true
 			],
 		}
-
+		
+		var windowWidth = $(window).width();
 		$(window).scroll(function(){
 			$scrollTop = $(this).scrollTop();
 			$.each(arcs.chart, function(i, v){
@@ -218,6 +219,9 @@ html(lang='zh-TW')
 			});
 		});
 		$(window).resize(function(){
+			if(windowWidth==$(window).width())
+				return;
+			windowWidth = $(window).width();
 			arcs = {
 				chart: [
 					drawArc({
@@ -377,6 +381,9 @@ html(lang='zh-TW')
 			}
 		});
 		$(window).resize(function(){
+			if(windowWidth==$(window).width())
+				return;
+			windowWidth = $(window).width();
 			bars = {
 				transition: true,
 				chart: drawBar(),

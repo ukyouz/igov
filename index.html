@@ -81,7 +81,7 @@
         <div><img src="image/heart.svg" class="brand"></div>
       </div>
       <div class="row">
-        <h1 class="igov">I-Gov用心，讓民眾順心與安心</h1>
+        <h1 class="igov">igov用心，讓民眾順心與安心</h1>
       </div>
     </div>
   </section>
@@ -227,6 +227,7 @@
     	],
     }
     
+    var windowWidth = $(window).width();
     $(window).scroll(function(){
     	$scrollTop = $(this).scrollTop();
     	$.each(arcs.chart, function(i, v){
@@ -238,6 +239,9 @@
     	});
     });
     $(window).resize(function(){
+    	if(windowWidth==$(window).width())
+    		return;
+    	windowWidth = $(window).width();
     	arcs = {
     		chart: [
     			drawArc({
@@ -397,6 +401,9 @@
     	}
     });
     $(window).resize(function(){
+    	if(windowWidth==$(window).width())
+    		return;
+    	windowWidth = $(window).width();
     	bars = {
     		transition: true,
     		chart: drawBar(),
