@@ -189,7 +189,10 @@
     	//- console.log($a);
     	$a--;
     	//- console.log($_this.position());
-    	$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12 + $(window).width()*0.05;
+    	if($(window).width()<=620)
+    		$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12 + $(window).width()*0.05;
+    	else
+    		$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12;
     	if($a == $('.list').attr('anchor')) {
     		$('.list .col-12').remove();
     		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).find('.tip').css('left', $tipLeft+"px");
