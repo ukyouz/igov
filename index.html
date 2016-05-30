@@ -271,7 +271,7 @@
     	var svg = d3.select(elem);
     	//- console.log(arc);
     	svg.selectAll('path').remove();
-    	$(opt.elem + ' .number .num').html("1");
+    	$(opt.elem + ' .number .num').html("0");
     	svg.append('path').attr({
     			'transform': 'translate('+ $(elem).width()/2 +','+$(elem).height()/2+')',
     			'd': arc1,
@@ -293,7 +293,7 @@
     				var interpolate = d3.interpolate(start, end);
     				return function (t) {
     					//- console.log(end.startAngle/data[0].endAngle * 100);
-    					$(opt.elem + ' .number .num').html(Math.ceil(t*data[0].data.percent));
+    					$(opt.elem + ' .number .num').html(Math.round(t*data[0].data.percent));
     					return arc(interpolate(t));
     				};
     			});
