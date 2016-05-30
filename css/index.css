@@ -441,6 +441,10 @@ ol li {
 	font-size: 0.4em;
 	font-weight: normal;
 }
+.graph.percent .label {
+	margin-top: 1em;
+	color: #444;
+}
 
 #intro {
 	border-top: 1px solid #ddd;
