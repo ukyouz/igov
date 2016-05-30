@@ -7,10 +7,6 @@ html(lang='zh-TW')
 		link(rel='stylesheet', type='text/css', href='css/reset.css')
 		link(rel='stylesheet', type='text/css', href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css')
 		link(rel='stylesheet', type='text/css', href='css/index.css')
-		script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-		script(type='text/javascript', src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js')
-		script(type='text/javascript', src='https://code.jquery.com/ui/1.11.4/jquery-ui.js')
-		script(type='text/javascript', src='js/service-data.js')
 	body
 	section#header
 		.container
@@ -51,10 +47,15 @@ html(lang='zh-TW')
 		</div>
 	script#tmplFolder(type="text/x-jquery-tmpl").
 		<div class="col-12">
+		<div class="tip"></div>
 		<div class="list-item ${name}">
 		{{each links}}<span class="sub-item"><span class="icon"></span><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
 		</div>
 		</div>
+	script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+	script(type='text/javascript', src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js')
+	script(type='text/javascript', src='https://code.jquery.com/ui/1.11.4/jquery-ui.js')
+	script(type='text/javascript', src='js/service-data.js')
 	script(type='text/javascript').
 		// for autocomplete
 		var data = [];
@@ -122,13 +123,14 @@ html(lang='zh-TW')
 			});
 			//- console.log($a);
 			$a--;
-			console.log($data);
+			console.log($_this.position());
+			$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12;
 			if($a == $('.list').attr('anchor')) {
 				$('.list .col-12').remove();
-				$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) );
+				$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).find('.tip').css('left', $tipLeft+"px");
 			} else {
 				$('.list .col-12').slideUp(function(){$(this).remove()});
-				$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).hide().slideDown();
+				$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).hide().slideDown().find('.tip').css('left', $tipLeft+"px");;
 			}
 			$('.list').attr({'anchor': $a, 'data-open': $n});
 			//- console.log(	$('.list').children(':eq('+$n+')') );
