@@ -216,8 +216,8 @@ html(lang='zh-TW')
 		$(window).scroll(function(){
 			$scrollTop = $(this).scrollTop();
 			$.each(arcs.chart, function(i, v){
-				console.log(v);
-				if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 150){
+				//- console.log(v);
+				if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 150 && $scrollTop<$(v.elem).offset().top){
 					arcs.transition[i] = false;
 					v.animate();
 				}
@@ -226,7 +226,7 @@ html(lang='zh-TW')
 		$(window).resize(function(){
 			if(windowWidth==$(window).width())
 				return;
-			windowWidth = $(window).width();
+			//- windowWidth = $(window).width();
 			arcs = {
 				chart: [
 					drawArc({
@@ -253,6 +253,7 @@ html(lang='zh-TW')
 			var svg = d3.select(elem);
 			//- console.log(arc);
 			svg.selectAll('path').remove();
+			$(opt.elem + ' .number .num').html("1");
 			svg.append('path').attr({
 					'transform': 'translate('+ $(elem).width()/2 +','+$(elem).height()/2+')',
 					'd': arc1,
@@ -305,15 +306,15 @@ html(lang='zh-TW')
 			var bar = {
 				height: 20,
 				tall: 34,
-				scale: (window.innerWidth < 400)? 6 : 10,
+				scale: ($('#survey').width()-79-40)/survey[0].counts,
 				offset: 79,
 				transition: true,
 				textOffset: 16,
 			}
-			d3.select('#survey').select('svg').remove();
+			$('#survey svg').remove();
 			var svg = d3.select('#survey')
 				.append('svg').attr({
-					'width': (window.innerWidth < 400)? window.innerWidth - 32 : 400,
+					'width': $('#survey').width(),
 					'height': survey.length * bar.tall - (bar.tall-bar.height)
 				});
 			var rect = svg.append('g').attr({'id': 'rect'}),
@@ -382,7 +383,7 @@ html(lang='zh-TW')
 		}
 		$(window).scroll(function(){
 			$scrollTop = $(this).scrollTop();
-			if(bars.transition && $scrollTop>$('#survey').offset().top - 150){
+			if(bars.transition && $scrollTop>$('#survey').offset().top - 150 && $scrollTop<$('#survey').offset().top){
 				bars.transition = false;
 				bars.chart.animate();
 			}
