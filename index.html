@@ -7,10 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/service-data.js"></script>
   </head>
   <body></body>
   <section id="header">
@@ -30,6 +26,46 @@
   <section id="service">
     <div class="container">
       <div class="list">
+      </div>
+    </div>
+  </section>
+  <section id="intro">
+    <div class="container">
+      <div class="row grid-2-col">
+        <div class="col">
+          <h2 class="title">一、安心政府 igov 的緣起</h2>
+          <p>近來台灣的詐騙總金額早已超過 189.5 億之譜，且 DailyView 去年 8 月利用大數據在網路上進行分析，發現網路詐騙行為的最大宗就是散佈假連結（高達 44% 的比例）。而政府線上服務種類繁多，複雜的網站設計更會讓使用者去尋覓不可靠的外在網站，有更高機率接觸到惡意的病毒連結。</p>
+          <p>因此「安心政府 igov 」的設計理念就是以簡潔的圖示串聯各政府部門的民生服務，讓民眾在單一頁面操作就能迅速找到需要的政府網站，貫徹「對的服務提供給對的人」。</p>
+        </div>
+        <div class="col">
+          <div class="graph percent">
+            <div class="set">
+              <div class="number">44<span class="percentage">%</span></div>
+              <div class="label">網路詐騙行為利用假連結</div>
+            </div>
+            <div class="set">
+              <div class="number">94<span class="percentage">%</span></div>
+              <div class="label">民眾希望有個整合的政府網站</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row grid-2-col">
+        <div class="col">
+          <h2 class="title">二、使用對象研究</h2>
+          <p>「安心政府 igov」試圖打造適合各年齡層皆能使用自如的整合性網站，因此本團隊針對多位成年民眾進行使用者需求分析，採用線上調查法與簡短訪談，蒐集到有效樣本 34 個，受訪民眾平均年齡為 29.5 歲。</p>
+          <p>資料經過系統性整理後得出以下結論：
+            <ul>
+              <li>目前政府網站面臨到服務項目多而分散的困境。</li>
+              <li>且在漫漫的網路空間裡難以被使用者發現。</li>
+              <li>民眾與政府間缺少有效的對接窗口。</li>
+            </ul>
+          </p>
+          <p>本研究進一步去分析民眾平時使用政府網站的行為落點，發現民眾常到訪的 12 種網站類型，並發展成「安心政府 igov」的主要服務選項。</p>
+        </div>
+        <div class="col">
+          <div class="graph barchart"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -54,11 +90,16 @@
   </script>
   <script id="tmplFolder" type="text/x-jquery-tmpl">
     <div class="col-12">
+    <div class="tip"></div>
     <div class="list-item ${name}">
     {{each links}}<span class="sub-item"><span class="icon"></span><a href="${$value.href}" target="_blank">${$value.title}</a></span>{{/each}}
     </div>
     </div>
   </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/service-data.js"></script>
   <script type="text/javascript">
     // for autocomplete
     var data = [];
@@ -127,13 +168,14 @@
     	});
     	//- console.log($a);
     	$a--;
-    	console.log($data);
+    	console.log($_this.position());
+    	$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12;
     	if($a == $('.list').attr('anchor')) {
     		$('.list .col-12').remove();
-    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) );
+    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).find('.tip').css('left', $tipLeft+"px");
     	} else {
     		$('.list .col-12').slideUp(function(){$(this).remove()});
-    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).hide().slideDown();
+    		$('#tmplFolder').tmpl($data).insertAfter( $($cols[$a]) ).hide().slideDown().find('.tip').css('left', $tipLeft+"px");;
     	}
     	$('.list').attr({'anchor': $a, 'data-open': $n});
     	//- console.log(	$('.list').children(':eq('+$n+')') );
