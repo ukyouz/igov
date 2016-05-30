@@ -7,10 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400">
   </head>
   <body></body>
   <section id="header">
-    <div class="container">
+    <div class="container landscape">
       <div class="row">
         <div><img src="image/igov-logo.svg" class="brand"></div>
       </div>
@@ -26,6 +27,61 @@
   <section id="service">
     <div class="container">
       <div class="list">
+      </div>
+    </div>
+  </section>
+  <section id="intro">
+    <div class="container">
+      <div class="row grid-2-col">
+        <div class="col">
+          <h2 class="title igov">一、安心政府 igov 的緣起</h2>
+          <p class="context">近來台灣的詐騙總金額早已超過 189.5 億之譜，且 DailyView 去年 8 月利用大數據在網路上進行分析，發現網路詐騙行為的最大宗就是散佈假連結（高達 44% 的比例）。而政府線上服務種類繁多，複雜的網站設計更會讓使用者去尋覓不可靠的外在網站，有更高機率接觸到惡意的病毒連結。</p>
+          <p class="context">因此「安心政府 igov 」的設計理念就是以簡潔的圖示串聯各政府部門的民生服務，讓民眾在單一頁面操作就能迅速找到需要的政府網站，貫徹「對的服務提供給對的人」。</p>
+        </div>
+        <div class="col">
+          <div id="overview" class="graph percent grid-2-col">
+            <div id="allInOne" class="set col">
+              <svg class="svg"></svg>
+              <div class="number">94<span class="percentage">%</span></div>
+              <div class="label">民眾希望有個整合的政府網站</div>
+            </div>
+            <div id="fakeLink" class="set col">
+              <svg class="svg"></svg>
+              <div class="number">44<span class="percentage">%</span></div>
+              <div class="label">網路詐騙行為利用假連結</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row grid-2-col">
+        <div class="col">
+          <h2 class="title igov">二、使用對象研究</h2>
+          <p class="context">「安心政府 igov」試圖打造適合各年齡層皆能使用自如的整合性網站，因此本團隊針對多位成年民眾進行使用者需求分析，採用線上調查法與簡短訪談，蒐集到有效樣本 34 個，受訪民眾平均年齡為 29.5 歲。</p>
+          <p class="context">資料經過系統性整理後得出以下結論：</p>
+          <ol class="context">
+            <li>服務項目多而分散</li>
+            <li>難以被發現且雜亂</li>
+            <li>缺乏有效對接窗口</li>
+          </ol>
+          <p class="context">本研究進一步去分析民眾平時使用政府網站的行為落點，發現民眾常到訪的 12 種網站類型，並發展成「安心政府 igov」的主要服務選項。</p>
+        </div>
+        <div class="col right">
+          <div id="survey" class="graph barchart"></div>
+        </div>
+        <div class="col">
+          <h2 class="title igov">三、設計思考</h2>
+          <p class="context">我們開始思考一個讓使用者可以秒懂的政府網站特質是什麼，在經過一番討論下，找到「便利性」、「易用性」、「安全性」、「整合性」這四大特質，我們從研究調查裡面找到名眾所使用政府服務的使用需求排序，將需求中埋藏在網海中的連結找出，並且一一驗證網站連結整合進「I-gov安心政府網站」裡，轉譯目前政府現有複雜的網站藉由個直覺的UI介面設計的方式。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="heart">
+    <div class="container landscape">
+      <div class="row">
+        <div><img src="image/heart.svg" class="brand"></div>
+      </div>
+      <div class="row">
+        <h1 class="igov">I-Gov用心，讓民眾順心與安心</h1>
       </div>
     </div>
   </section>
@@ -59,6 +115,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
   <script type="text/javascript" src="js/service-data.js"></script>
   <script type="text/javascript">
     // for autocomplete
@@ -141,5 +198,209 @@
     	//- console.log(	$('.list').children(':eq('+$n+')') );
     });
     //- $('.payment').clone().appendTo('.list');
+  </script>
+  <script type="text/javascript">
+    var overview = {
+    	'allInOne': [
+    		{x:1, label: '整合政府網站希望', percent: 94, color: '#33CC99'},
+    		{x:2, label: '其他', percent: 6, color: '#eeeeee'},
+    	],
+    	'fakeLink': [
+    		{x:1, label: '假連結', percent: 44, color: '#C0504C'},
+    		{x:2, label: '其他', percent: 56, color: '#eeeeee'},
+    	],
+    }
+    var arcs = {
+    	chart: [
+    		drawArc({
+    			elem: '#allInOne svg',
+    			data: overview.allInOne,
+    		}),
+    		drawArc({
+    			elem: '#fakeLink svg',
+    			data: overview.fakeLink,
+    		}),
+    	],
+    	transition: [
+    		true,
+    		true
+    	],
+    }
+    
+    $(window).scroll(function(){
+    	$scrollTop = $(this).scrollTop();
+    	$.each(arcs.chart, function(i, v){
+    		//- console.log(v);
+    		if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 64){
+    			arcs.transition[i] = false;
+    			v.animate();
+    		}
+    	});
+    });
+    $(window).resize(function(){
+    	arcs = {
+    		chart: [
+    			drawArc({
+    				elem: '#allInOne svg',
+    				data: overview.allInOne,
+    			}),
+    			drawArc({
+    				elem: '#fakeLink svg',
+    				data: overview.fakeLink,
+    			}),
+    		],
+    		transition: [
+    			true,
+    			true
+    		],
+    	}
+    });
+    
+    function drawArc(opt){
+    	var pie = d3.layout.pie().value(function(d) {return d.percent;}).sort(null);
+    	var data = pie(opt.data), elem = opt.elem;
+    	var side = ($(elem).width() > $(elem).height()) ? $(elem).height() : $(elem).width();
+    	var arc1 = d3.svg.arc().outerRadius(Math.floor(side/2)-10).innerRadius(Math.floor(side/2)-20).startAngle(0).endAngle(2*Math.PI);;
+    	var svg = d3.select(elem);
+    	//- console.log(arc);
+    	svg.selectAll('path').remove();
+    	svg.append('path').attr({
+    			'transform': 'translate('+ $(elem).width()/2 +','+$(elem).height()/2+')',
+    			'd': arc1,
+    			'fill': '#f1f1f1',
+    		});
+    	svg.append('path').attr({
+    			'class': 'arc',
+    			'transform': 'translate('+ $(elem).width()/2 +','+$(elem).height()/2+')',
+    			'fill': data[0].data.color,
+    		});
+    	//- console.log(arc);
+    	var arc = d3.svg.arc().outerRadius(Math.floor(side/2)-10).innerRadius(Math.floor(side/2)-20);
+    	return {
+    		elem: elem,
+    		animate: function(){
+    			svg.selectAll('.arc').transition().duration(1500).attrTween('d', function(){
+    				var start = {startAngle: 0, endAngle: 0};
+    				var end = {startAngle: data[0].startAngle, endAngle: data[0].endAngle};
+    				var interpolate = d3.interpolate(start, end);
+    				return function (t) {
+    					return arc(interpolate(t));
+    				};
+    			});
+    		}
+    	};
+    }
+    
+    var survey = [
+    	{x: 1, label: '交通資訊', counts: 25},
+    	{x: 2, label: '觀光旅遊', counts: 18},
+    	{x: 3, label: '郵政服務', counts: 17},
+    	{x: 4, label: '地方政府', counts: 15},
+    	{x: 5, label: '藝文活動', counts: 14},
+    	{x: 6, label: '就業輔導', counts: 13},
+    	{x: 7, label: '醫療衛生', counts: 10},
+    	{x: 8, label: '教育相關', counts: 10},
+    	{x: 9, label: '個人稅務', counts: 9},
+    	{x: 10, label: '繳費功能', counts: 8},
+    	{x: 11, label: '法條規範', counts: 8},
+    	{x: 12, label: '公民參與', counts: 8},
+    ];
+    var bars = {
+    	transition: true,
+    	chart: drawBar(),
+    }
+    //- drawBar();	
+    function drawBar(){
+    	var bar = {
+    		height: 20,
+    		tall: 34,
+    		scale: (window.innerWidth < 400)? 6 : 10,
+    		offset: 79,
+    		transition: true,
+    		textOffset: 16,
+    	}
+    	d3.select('#survey').select('svg').remove();
+    	var svg = d3.select('#survey')
+    		.append('svg').attr({
+    			'width': (window.innerWidth < 400)? window.innerWidth - 32 : 400,
+    			'height': survey.length * bar.tall
+    		});
+    	var rect = svg.append('g').attr({'id': 'rect'}),
+    		num = svg.append('g').attr({'id': 'num'}),
+    		label = svg.append('g').attr({'id': 'num'});
+    	rect.selectAll('rect')
+    		.data(survey).enter()
+    		.append('rect').attr({
+    			'width':1,
+    			'height': bar.height,
+    			'fill': '#33CC99',
+    			'x':bar.offset,
+    			'y':function(d){
+    				return (bar.tall-bar.height)+ (d.x-1)*bar.tall;
+    			}
+    		});
+    	num.selectAll('text')
+    		.data(survey).enter()
+    		.append('text').attr({
+    			'fill':'#000',
+    			'x':function(d){
+    				return 0*bar.scale + bar.offset + 10;
+    			},
+    			'y':function(d){
+    				return (bar.tall-bar.height)+ (d.x-1) * bar.tall + bar.textOffset;
+    			}
+    		})
+    		.text(function(d){return '0%'});
+    	label.selectAll('text')
+    		.data(survey).enter()
+    		.append('text').attr({
+    			'fill':'#000',
+    			'text-anchor': 'end',
+    			'x':bar.offset - 15,
+    			'y':function(d){
+    				return (bar.tall-bar.height) + (d.x-1) * bar.tall + bar.textOffset;
+    			}
+    		})
+    		.text(function(d){
+    			return d.label;
+    		});
+    	return {
+    		elem: svg,
+    		animate: function(){
+    			rect.selectAll('rect')
+    				.transition().duration(1500).attr({
+    					'width':function(d){
+    						return d.counts * bar.scale;
+    					}
+    				});
+    			num.selectAll('text')
+    				.transition().duration(1500).attr({
+    					'x':function(d){
+    						return d.counts*bar.scale + bar.offset + 10;
+    					}
+    				})
+    				.tween('number',function(d){
+    					//- console.log(d);
+    					var i = d3.interpolateRound(0, d.counts);
+    					return function(t) {
+    						this.textContent = Math.floor(100*i(t)/34)+"%";
+    					};
+    				});
+    		}
+    	}
+    }
+    $(window).scroll(function(){
+    	$scrollTop = $(this).scrollTop();
+    	if(bars.transition && $scrollTop>$('#survey').offset().top - 200){
+    		bars.transition = false;
+    		bars.chart.animate();
+    	}
+    });
+    $(window).resize(function(){
+    	bars = {
+    		transition: true,
+    		chart: drawBar(),
+    	}
+    });
   </script>
 </html>

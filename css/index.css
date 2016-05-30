@@ -3,7 +3,7 @@
 }
 body {
 	font-size: 16px;
-	font-family: arial, sans-serif;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
 }
 a {
 	color: inherit;
@@ -18,8 +18,8 @@ section {
 .container {
 	max-width: 1000px;
 	margin: auto;
-	padding-top: 3em;
-	padding-bottom: 3em;
+	padding-top: 4em;
+	padding-bottom: 4em;
 	overflow: hidden;
 }
 .form-control .form-input {
@@ -35,6 +35,23 @@ code {
 	display: none;
 }
 
+.igov {
+	color: #33CC99;
+}
+
+.landscape {
+	text-align: center;
+}
+.landscape .row {
+	margin-bottom: 1em;
+}
+.landscape .row:last-child {
+	margin-bottom: 0;
+}
+.landscape .row > div {
+	display: inline-block;
+}
+
 /*************************************
  * header
  *************************************/
@@ -43,18 +60,10 @@ code {
 	width: 320px;
 }
 #header {
-	text-align: center;
 	border-top: 16px solid #33CC99;
-	border-bottom: 1px solid #ddd;
 }
 #header .container {
 	padding-top: 6em;
-}
-#header .row {
-	margin-bottom: 1em;
-}
-#header .row > div {
-	display: inline-block;
 }
 #header .row:last-child {
 	margin-bottom: 0.5em;
@@ -73,8 +82,8 @@ code {
 }
 @media (max-width: 560px) {
 	.container {
-		padding-top: 1.5em;
-		padding-bottom: 1.5em;
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
 	}
 	#header .container {
 		padding-top: 2em;
@@ -136,6 +145,9 @@ code {
 	padding-top: 3em;
 	padding-bottom: 3em;
 }*/
+#service {
+	border-top: 1px solid #ddd;
+}
 #service .list {
 	max-width: 38em;
 	text-align: center;
@@ -177,7 +189,7 @@ code {
 	position: relative;
 }
 #service .col-12 .tip {
-	background: #f5f5f5;
+	background: #eeeeee;
 	position: absolute;
 	width: 12px;
 	height: 12px;
@@ -188,7 +200,7 @@ code {
 	-webkit-transform: rotate(45deg);
 }
 #service .col-12 .list-item {
-	background: #f5f5f5;
+	background: #eeeeee;
 	border: none;
 	border-radius: 0;
 	padding-left: 1em;
@@ -339,23 +351,147 @@ code {
  * intro
  *************************************/
 
-.row {
-	clear: both;
+.row,
+.grid-2-col {
+	overflow: hidden;
+	/*clear: both;*/
 }
 
 .grid-2-col .col {
 	width: 50%;
+	padding: 0 2em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	float: left;
 }
+.grid-2-col .col.right {
+	float: right;
+}
+.container>.grid-2-col>.col {
+	margin-bottom: 1.7em;
+}
+.container>.grid-2-col:last-child>.col:last-child {
+	margin-bottom: 0;
+}
+@media (max-width: 880px) {
+	.container>.grid-2-col>.col {
+		padding: 0 1em;
+	}
+}
+@media (max-width: 775px) {
+	.container>.grid-2-col>.col {
+		width: 100%;
+		/*padding: 0 1em;*/
+	}
+}
+h2 {
+	font-size: 1.25em;
+	margin: 1em 0;
+}
+p {
+	margin: 1.7em 0;
+}
+ol {
+	margin-left: 2em;
+}
+ol li {
+	list-style-type: decimal;
+}
+.col p:last-child {
+	margin-bottom: 0;
+}
+.col h2:first-child {
+	margin-top: 0;
+}
 
+.graph .set {
+	display: inline-block;
+	text-align: center;
+}
+
+.graph.percent .number {
+	font-size: 4.5em;
+	font-weight: 200;
+	line-height: 200px;
+	height: 200px;
+}
+
+.graph.percent .number .percentage {
+	font-size: 0.4em;
+	font-weight: normal;
+}
+
+#intro {
+	border-top: 1px solid #ddd;
+}
+#intro .context {
+	padding-left: 2.5em;
+}
+
+#intro .percent,
+#intro .barchart {
+	margin-top: 2.5em;
+}
+@media (max-width: 775px) {
+	#intro .context {
+		padding-left: 0;
+	}
+	#intro .percent,
+	#intro .barchart {
+		margin-top: 0;
+	}
+	#intro .percent .set:first-child {
+		margin-bottom: 1em;
+	}
+}
+
+#intro .percent .set {
+	position: relative;
+}
+@media (max-width: 460px) {
+	.graph.percent .number {
+		font-size: 3.5em;
+	}
+}
+@media (max-width: 375px) {
+	#intro .percent .set {
+		width: 100%;
+	}
+}
+#intro .svg {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	left: 0;
+}
+
+/*************************************
+ * heart
+ *************************************/
+#heart .landscape {
+	border-top: 2px solid #eee;
+}
+#heart .brand {
+	width: 6em;
+}
+#heart h1 {
+	font-size: 1.5em;
+	letter-spacing: 1px;
+}
+@media (max-width: 375px){
+	#heart h1 {
+		font-size: 1.2em;
+	}
+}
 
 /*************************************
  * footer
  *************************************/
 
+#footer a {
+	text-decoration: none;
+}
 #footer {
 	background: #33CC99;
 	color: #fff;
