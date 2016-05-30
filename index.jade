@@ -40,12 +40,14 @@ html(lang='zh-TW')
 					.graph.percent.grid-2-col#overview
 						.set.col#allInOne
 							svg.svg
-							.number 94
+							.number
+								span.num 0
 								span.percentage %
 							.label 民眾希望有個整合的政府網站
 						.set.col#fakeLink
 							svg.svg
-							.number 44
+							.number
+								span.num 0
 								span.percentage %
 							.label 網路詐騙行為利用假連結
 			.row.grid-2-col
@@ -196,11 +198,11 @@ html(lang='zh-TW')
 		var arcs = {
 			chart: [
 				drawArc({
-					elem: '#allInOne svg',
+					elem: '#allInOne',
 					data: overview.allInOne,
 				}),
 				drawArc({
-					elem: '#fakeLink svg',
+					elem: '#fakeLink',
 					data: overview.fakeLink,
 				}),
 			],
@@ -214,7 +216,7 @@ html(lang='zh-TW')
 		$(window).scroll(function(){
 			$scrollTop = $(this).scrollTop();
 			$.each(arcs.chart, function(i, v){
-				//- console.log(v);
+				console.log(v);
 				if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 150){
 					arcs.transition[i] = false;
 					v.animate();
@@ -228,11 +230,11 @@ html(lang='zh-TW')
 			arcs = {
 				chart: [
 					drawArc({
-						elem: '#allInOne svg',
+						elem: '#allInOne',
 						data: overview.allInOne,
 					}),
 					drawArc({
-						elem: '#fakeLink svg',
+						elem: '#fakeLink',
 						data: overview.fakeLink,
 					}),
 				],
@@ -245,7 +247,7 @@ html(lang='zh-TW')
 
 		function drawArc(opt){
 			var pie = d3.layout.pie().value(function(d) {return d.percent;}).sort(null);
-			var data = pie(opt.data), elem = opt.elem;
+			var data = pie(opt.data), elem = opt.elem + ' svg';
 			var side = ($(elem).width() > $(elem).height()) ? $(elem).height() : $(elem).width();
 			var arc1 = d3.svg.arc().outerRadius(Math.floor(side/2)-10).innerRadius(Math.floor(side/2)-20).startAngle(0).endAngle(2*Math.PI);;
 			var svg = d3.select(elem);
@@ -271,6 +273,8 @@ html(lang='zh-TW')
 						var end = {startAngle: data[0].startAngle, endAngle: data[0].endAngle};
 						var interpolate = d3.interpolate(start, end);
 						return function (t) {
+							//- console.log(end.startAngle/data[0].endAngle * 100);
+							$(opt.elem + ' .number .num').html(Math.ceil(t*data[0].data.percent));
 							return arc(interpolate(t));
 						};
 					});
