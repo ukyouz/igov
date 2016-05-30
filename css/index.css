@@ -378,11 +378,18 @@ code {
 	.container>.grid-2-col>.col {
 		padding: 0 1em;
 	}
+	.container .grid-2-col .card {
+		padding-bottom: 2em;
+	}
 }
 @media (max-width: 775px) {
 	.container>.grid-2-col>.col {
 		width: 100%;
 		/*padding: 0 1em;*/
+	}
+	.container .grid-2-col .card {
+		padding-top: 1.7em;
+		padding-bottom: 1.7em;
 	}
 }
 h2 {
@@ -406,6 +413,11 @@ ol li {
 	margin-top: 0;
 }
 
+.grid-2-col .card {
+	background: #f2f2f2;
+	padding-bottom: 2em;
+}
+
 .graph .set {
 	display: inline-block;
 	text-align: center;
@@ -427,7 +439,7 @@ ol li {
 	border-top: 1px solid #ddd;
 }
 #intro .context {
-	padding-left: 2.5em;
+	padding-left: 3em;
 }
 
 #intro .percent,
@@ -522,4 +534,9 @@ ol li {
 #footer .slogan span {
 	display: block;
 	font-size: 0.8em;
+}
+@media (max-width: 415px){
+	#footer .fb {
+		margin-top: 1.7em;
+	}
 }
