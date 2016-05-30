@@ -185,7 +185,7 @@
     	});
     	//- console.log($a);
     	$a--;
-    	console.log($_this.position());
+    	//- console.log($_this.position());
     	$tipLeft = $_this.position().left + $_this.parent().width()/2 - 12;
     	if($a == $('.list').attr('anchor')) {
     		$('.list .col-12').remove();
@@ -231,7 +231,7 @@
     	$scrollTop = $(this).scrollTop();
     	$.each(arcs.chart, function(i, v){
     		//- console.log(v);
-    		if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 64){
+    		if(arcs.transition[i] && $scrollTop>$(v.elem).offset().top - 150){
     			arcs.transition[i] = false;
     			v.animate();
     		}
@@ -391,7 +391,7 @@
     }
     $(window).scroll(function(){
     	$scrollTop = $(this).scrollTop();
-    	if(bars.transition && $scrollTop>$('#survey').offset().top - 200){
+    	if(bars.transition && $scrollTop>$('#survey').offset().top - 150){
     		bars.transition = false;
     		bars.chart.animate();
     	}
