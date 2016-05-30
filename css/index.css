@@ -196,7 +196,7 @@ code {
 	}
 }
 #service .col-12 .tip {
-	background: #eeeeee;
+	background: #f2f2f2;
 	position: absolute;
 	width: 12px;
 	height: 12px;
@@ -207,7 +207,7 @@ code {
 	-webkit-transform: rotate(45deg);
 }
 #service .col-12 .list-item {
-	background: #eeeeee;
+	background: #f2f2f2;
 	border: none;
 	border-radius: 0;
 	padding-left: 0.5em;
