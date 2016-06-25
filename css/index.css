@@ -551,8 +551,10 @@ ol li {
 }
 #footer .license {
 	display: block;
-	color: #eee;
+	color: #c2eecd;
 	margin-top: 1em;
+	font-size: 0.9em;
+	letter-spacing: 0.4px;
 }
 @media (max-width: 415px){
 	#footer .fb {
