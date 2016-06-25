@@ -516,6 +516,9 @@ ol li {
 #footer a {
 	text-decoration: none;
 }
+#footer a:hover {
+	text-decoration: underline;
+}
 #footer {
 	background: #33CC99;
 	color: #fff;
@@ -545,6 +548,11 @@ ol li {
 #footer .slogan span {
 	display: block;
 	font-size: 0.8em;
+}
+#footer .license {
+	display: block;
+	color: #eee;
+	margin-top: 1em;
 }
 @media (max-width: 415px){
 	#footer .fb {
